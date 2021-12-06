@@ -1,2 +1,2 @@
-# mpstest-o-matic
-D-Jetronic MPS Test-o-Matic
+# mpstune-o-matic
+D-Jetronic MPS Tune-o-Matic
