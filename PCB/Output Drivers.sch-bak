@@ -327,4 +327,8 @@ Text HLabel 4850 2050 2    50   Output ~ 0
 SPEED_SENSOR_PULSE_12V
 Text HLabel 4850 3950 2    50   Output ~ 0
 ENABLE_II_IV_12V
+Text HLabel 2450 5450 0    50   Input ~ 0
+MIXTURE_BIAS
+Text HLabel 5000 5350 2    50   Output ~ 0
+MIXTURE_BIAS_12V
 $EndSCHEMATC
