@@ -1,7 +1,7 @@
 EESchema Schematic File Version 4
 EELAYER 30 0
 EELAYER END
-$Descr D 34000 22000
+$Descr C 22000 17000
 encoding utf-8
 Sheet 1 1
 Title "Bosch D-Jetronic ECU 0 280 002 005 Pressure Loop"
@@ -14,7 +14,7 @@ Comment3 "Mercedes-Benz Part # A 000 545 26 32"
 Comment4 "Main Board 2 288 300 028"
 $EndDescr
 Text Notes 850  6900 0    50   ~ 0
-.model DIODE D\n.model BCY58 npn\n.model BSX95 npn\n.model AUY21 pnp\nL1 1 2 501m\nL2 2 1 1.043H\nK1 L1 L2 1.0\n.tran 0.05ms 600ms 120m\n.control\nrun\nrusage\nset filetype=ascii\nset color0=white\nset xbrushwidth=5\nwrite "C:\Users\andy\OneDrive\Documents\MPS Tune-o-Matic\trunk\Simulation\Pressure Loop\PressureLoop.out" "V(E22-PG)" "V(E21-PG)" "V(E14-PG)" "V(E13-PG)" "V(INT-7)"\nplot "V(E22-PG)"+5 "V(E14-PG)"+10 "V(E21-PG)"+15 "V(E13-PG)"+20 "V(INT-7)"\n.endc\n
+.model DIODE D\n.model BCY58 npn\n.model BSX95 npn\n.model AUY21 pnp\nL1 1 2 501m\nL2 2 1 1.043H\nK1 L1 L2 0.498\n.tran 0.05ms 600ms 120m\n.control\nrun\nrusage\nset filetype=ascii\nset color0=white\nset xbrushwidth=5\nwrite "C:\Users\andy\OneDrive\Documents\MPS Tune-o-Matic\trunk\Simulation\Pressure Loop\PressureLoop.out" "V(E22-PG)" "V(E21-PG)" "V(E14-PG)" "V(E13-PG)" "V(INT-7)"\nplot "V(E22-PG)"+5 "V(E14-PG)"+10 "V(E21-PG)"+15 "V(E13-PG)"+20 "V(INT-7)"\n.endc\n
 Text GLabel 2650 4750 3    50   UnSpc ~ 0
 E11-GND
 Wire Wire Line
@@ -987,8 +987,8 @@ AUX12-TGL
 Text GLabel 10500 8650 1    50   Output ~ 0
 AUX11-TGL
 Connection ~ 9150 8900
-Text Notes 1000 1400 0    118  ~ 0
-This requires external ngspice for simulation. See:\nhttp://ngspice.sourceforge.net/ngspice-eeschema.html\nsection 6
+Text Notes 1000 900  0    118  ~ 0
+For external ngspice for simulation see: http://ngspice.sourceforge.net/ngspice-eeschema.html, section 6
 $Comp
 L Device:R_US R54
 U 1 1 61B857B7
@@ -1817,23 +1817,6 @@ Wire Wire Line
 Connection ~ 11250 7350
 Wire Wire Line
 	11250 7350 15000 7350
-$Comp
-L Device:C C3
-U 1 1 62C849EE
-P 16850 10100
-F 0 "C3" H 16650 10150 50  0000 L CNN
-F 1 "10n" H 16600 10050 50  0000 L CNN
-F 2 "Right D Line" H 16888 9950 50  0001 C CNN
-F 3 "~" H 16850 10100 50  0001 C CNN
-F 4 "MK 6,8μF ±5% 100V" H 16850 10100 50  0001 C CNN "Notes"
-	1    16850 10100
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	16850 9950 16850 9750
-Wire Wire Line
-	16850 10250 16850 10400
-Wire Wire Line
-	16850 10400 16200 10400
-Connection ~ 16200 10400
+Text Notes 1000 1150 0    118  ~ 0
+MPS coupling factor (k) is set to 0.498, which was obtained by measurement with no vacuum
 $EndSCHEMATC
