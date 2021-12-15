@@ -13,8 +13,6 @@ Comment2 "Bosch Order # 0 280 002 005"
 Comment3 "Mercedes-Benz Part # A 000 545 26 32"
 Comment4 "Main Board 2 288 300 028"
 $EndDescr
-Text Notes 1350 6950 0    50   ~ 0
-.model DIODE D\n.model BCY58 npn\n.model BSX95 npn\n.model AUY21 pnp\nL1 1 2 501m\nL2 2 1 1.043H\nK1 L1 L2 0.498\n.tran 0.05ms 600ms 120m\n.control\nrun\nrusage\nset filetype=ascii\nset color0=white\nset xbrushwidth=5\nwrite "C:\Users\andy\OneDrive\Documents\MPS Tune-o-Matic\trunk\Simulation\Pressure Loop\PressureLoop.out" "V(E22-PG)" "V(E21-PG)" "V(E14-PG)" "V(E13-PG)" "V(INT-7)"\nplot "V(E22-PG)"+5 "V(E14-PG)"+10 "V(E21-PG)"+15 "V(E13-PG)"+20 "V(INT-7)"\n.endc\n
 Text GLabel 2650 4750 3    50   UnSpc ~ 0
 E11-GND
 Wire Wire Line
@@ -1393,8 +1391,6 @@ Wire Wire Line
 	1950 4050 1950 3750
 Wire Wire Line
 	1950 3350 1950 3000
-Wire Wire Line
-	5950 12750 5850 12750
 Text GLabel 5850 12750 0    50   Input ~ 0
 E15-MPS
 Text GLabel 6950 12750 3    50   Input ~ 0
@@ -1711,12 +1707,12 @@ L Simulation_SPICE:VDC V7
 U 1 1 628A2F39
 P 1300 4250
 F 0 "V7" H 1430 4341 50  0000 L CNN
-F 1 "5" H 1430 4250 50  0000 L CNN
+F 1 "4" H 1430 4250 50  0000 L CNN
 F 2 "" H 1300 4250 50  0001 C CNN
 F 3 "~" H 1300 4250 50  0001 C CNN
 F 4 "Y" H 1300 4250 50  0001 L CNN "Spice_Netlist_Enabled"
 F 5 "V" H 1300 4250 50  0001 L CNN "Spice_Primitive"
-F 6 "dc(5.0)" H 1430 4159 50  0000 L CNN "Spice_Model"
+F 6 "dc(4.0)" H 1430 4159 50  0000 L CNN "Spice_Model"
 	1    1300 4250
 	1    0    0    -1  
 $EndComp
@@ -1727,36 +1723,6 @@ Wire Wire Line
 Connection ~ 1950 4600
 Wire Wire Line
 	1300 4050 1300 2950
-Wire Wire Line
-	6750 13450 7400 13450
-$Comp
-L Device:R_US R70
-U 1 1 62996BC8
-P 6100 12750
-F 0 "R70" V 6000 12700 50  0000 L CNN
-F 1 "92.8" V 6200 12600 50  0000 L CNN
-F 2 "Upper Center K" V 6140 12740 50  0001 C CNN
-F 3 "~" H 6100 12750 50  0001 C CNN
-F 4 "O Bk Br Gd = 300Ω ±5%" H 6100 12750 50  0001 C CNN "Notes"
-	1    6100 12750
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R_US R71
-U 1 1 6299740F
-P 6100 13450
-F 0 "R71" V 6200 13400 50  0000 L CNN
-F 1 "345.1" V 6000 13350 50  0000 L CNN
-F 2 "Upper Center K" V 6140 13440 50  0001 C CNN
-F 3 "~" H 6100 13450 50  0001 C CNN
-F 4 "O Bk Br Gd = 300Ω ±5%" H 6100 13450 50  0001 C CNN "Notes"
-	1    6100 13450
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	6750 12750 9950 12750
-Wire Wire Line
-	5700 13450 5950 13450
 Connection ~ 5700 13450
 Wire Wire Line
 	5700 13100 5700 13450
@@ -1768,42 +1734,12 @@ Text GLabel 5600 13450 0    50   Input ~ 0
 INT-6
 Wire Wire Line
 	5600 13450 5700 13450
-$Comp
-L pspice:INDUCTOR L1
-U 1 1 62AE9102
-P 6500 12750
-F 0 "L1" H 6500 12569 50  0000 C CNN
-F 1 "501mH" H 6500 12660 50  0000 C CNN
-F 2 "" H 6500 12750 50  0001 C CNN
-F 3 "~" H 6500 12750 50  0001 C CNN
-	1    6500 12750
-	-1   0    0    1   
-$EndComp
-$Comp
-L pspice:INDUCTOR L2
-U 1 1 62B102AA
-P 6500 13450
-F 0 "L2" H 6500 13665 50  0000 C CNN
-F 1 "1.043H" H 6500 13574 50  0000 C CNN
-F 2 "" H 6500 13450 50  0001 C CNN
-F 3 "~" H 6500 13450 50  0001 C CNN
-	1    6500 13450
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3700 14300 8350 14300
 Connection ~ 8350 14300
 Wire Wire Line
 	5850 11850 8750 11850
 Connection ~ 8750 11850
-Wire Notes Line
-	6800 12450 6800 13700
-Wire Notes Line
-	6800 13700 5900 13700
-Wire Notes Line
-	5900 13700 5900 12450
-Wire Notes Line
-	5900 12450 6800 12450
 Text Notes 2900 12700 0    50   ~ 0
 Air temp sensor
 Wire Wire Line
@@ -1819,4 +1755,37 @@ Wire Wire Line
 	13550 7450 17300 7450
 Text Notes 1100 1400 0    118  ~ 0
 MPS coupling factor (k) is set to 0.498, which was obtained by measurement with no vacuum
+Text Notes 1350 6950 0    50   ~ 0
+.model DIODE D\n.model BCY58 npn\n.model BSX95 npn\n.model AUY21 pnp\n.tran 0.05ms 92ms 89m\n.control\nrun\nrusage\nset filetype=ascii\nset color0=white\nset xbrushwidth=5\nwrite "C:\Users\andy\OneDrive\Documents\MPS Tune-o-Matic\trunk\Simulation\Pressure Loop\PressureLoop.out" "V(BASE_PULSE)" "V(INT-7)"\nplot "V(BASE_PULSE)" "V(INT-7)"\n.endc\n
+$Comp
+L BritishIdeas:MPS TR1
+U 1 1 61BF306A
+P 6350 13100
+F 0 "TR1" V 6800 12800 50  0000 L CNN
+F 1 "MPS" V 6800 13150 50  0000 L CNN
+F 2 "" H 6350 13100 50  0001 C CNN
+F 3 "" H 6350 13100 50  0001 C CNN
+F 4 "X" H 6350 13100 50  0001 C CNN "Spice_Primitive"
+F 5 "mps1" V 6900 13050 50  0000 C CNN "Spice_Model"
+F 6 "Y" H 6350 13100 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "MPS.lib" H 6350 13100 50  0001 C CNN "Spice_Lib_File"
+	1    6350 13100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6150 12850 6150 12750
+Wire Wire Line
+	5850 12750 6150 12750
+Wire Wire Line
+	6550 12850 6550 12750
+Wire Wire Line
+	6550 12750 9950 12750
+Wire Wire Line
+	6550 13450 6550 13350
+Wire Wire Line
+	6550 13450 7400 13450
+Wire Wire Line
+	6150 13450 6150 13350
+Wire Wire Line
+	5700 13450 6150 13450
 $EndSCHEMATC
