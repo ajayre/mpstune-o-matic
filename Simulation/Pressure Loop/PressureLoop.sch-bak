@@ -1707,12 +1707,12 @@ L Simulation_SPICE:VDC V7
 U 1 1 628A2F39
 P 1300 4250
 F 0 "V7" H 1430 4341 50  0000 L CNN
-F 1 "7" H 1430 4250 50  0000 L CNN
+F 1 "4" H 1430 4250 50  0000 L CNN
 F 2 "" H 1300 4250 50  0001 C CNN
 F 3 "~" H 1300 4250 50  0001 C CNN
 F 4 "Y" H 1300 4250 50  0001 L CNN "Spice_Netlist_Enabled"
 F 5 "V" H 1300 4250 50  0001 L CNN "Spice_Primitive"
-F 6 "dc(7.0)" H 1430 4159 50  0000 L CNN "Spice_Model"
+F 6 "dc(4.0)" H 1430 4159 50  0000 L CNN "Spice_Model"
 	1    1300 4250
 	1    0    0    -1  
 $EndComp
@@ -1753,25 +1753,8 @@ Wire Wire Line
 Connection ~ 13550 7450
 Wire Wire Line
 	13550 7450 17300 7450
-Text Notes 1100 1400 0    118  ~ 0
-MPS coupling factor (k) is set to 0.498, which was obtained by measurement with no vacuum
 Text Notes 1350 6950 0    50   ~ 0
 .model DIODE D\n.model BCY58 npn\n.model BSX95 npn\n.model AUY21 pnp\n.tran 0.05ms 92ms 89m\n.control\nrun\nrusage\nset filetype=ascii\nset color0=white\nset xbrushwidth=5\nwrite "C:\Users\andy\OneDrive\Documents\MPS Tune-o-Matic\trunk\Simulation\Pressure Loop\PressureLoop.out" "V(BASE_PULSE)" "V(INT-7)"\nplot "V(BASE_PULSE)" "V(INT-7)"\n.endc\n
-$Comp
-L BritishIdeas:MPS TR1
-U 1 1 61BF306A
-P 6350 13100
-F 0 "TR1" V 6800 12800 50  0000 L CNN
-F 1 "MPS" V 6800 13150 50  0000 L CNN
-F 2 "" H 6350 13100 50  0001 C CNN
-F 3 "" H 6350 13100 50  0001 C CNN
-F 4 "X" H 6350 13100 50  0001 C CNN "Spice_Primitive"
-F 5 "mps1" V 6900 13050 50  0000 C CNN "Spice_Model"
-F 6 "Y" H 6350 13100 50  0001 C CNN "Spice_Netlist_Enabled"
-F 7 "MPS.lib" H 6350 13100 50  0001 C CNN "Spice_Lib_File"
-	1    6350 13100
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	6150 12850 6150 12750
 Wire Wire Line
@@ -1788,4 +1771,19 @@ Wire Wire Line
 	6150 13450 6150 13350
 Wire Wire Line
 	5700 13450 6150 13450
+$Comp
+L BritishIdeas:MPS TR1
+U 1 1 620F2499
+P 6350 13100
+F 0 "TR1" V 6050 13050 50  0000 L CNN
+F 1 "MPS" V 6600 13000 50  0000 L CNN
+F 2 "" H 6350 13100 50  0001 C CNN
+F 3 "" H 6350 13100 50  0001 C CNN
+F 4 "X" H 6350 13100 50  0001 C CNN "Spice_Primitive"
+F 5 "mps vac=15" V 6800 13100 50  0000 C CNN "Spice_Model"
+F 6 "Y" H 6350 13100 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "MPS.lib" H 6350 13100 50  0001 C CNN "Spice_Lib_File"
+	1    6350 13100
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC
