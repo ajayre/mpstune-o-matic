@@ -1,0 +1,116 @@
+.title KiCad schematic
+.include "MPS.lib"
+V2 Net-_V2-Pad1_ 0 dc(12)
+V3 E22-PG 0 pulse(0 3 2n 2n 2n 60ms 180ms)
+V4 E21-PG 0 pulse(0 3 90ms 2n 2n 60ms 180ms)
+VBOGUS2 Net-_V2-Pad1_ E24-12V dc(0)
+R15 Net-_D6-Pad1_ E22-PG 3k
+Q3 FF1 Net-_D6-Pad2_ 0 BCY58
+R16 FF2 E22-PG 3k
+D6 Net-_D6-Pad1_ Net-_D6-Pad2_ DIODE
+R28 Net-_C1-Pad1_ Net-_D6-Pad2_ 300
+C1 Net-_C1-Pad1_ Net-_C1-Pad2_ 2.2n
+D7 Net-_D7-Pad1_ Net-_C1-Pad2_ DIODE
+R18 Net-_D7-Pad1_ E21-PG 3k
+R17 FF1 E21-PG 3k
+R32 0 Net-_D6-Pad2_ 180k
+R37 FF1 E24-12V 1k
+Q4 FF2 Net-_C1-Pad2_ 0 BCY58
+R33 0 Net-_C1-Pad2_ 180k
+R38 FF2 E24-12V 1k
+R43 Net-_Q7-Pad2_ FF1 10k
+Q7 Net-_Q7-Pad1_ Net-_Q7-Pad2_ 0 BCY58
+R47 Net-_Q7-Pad1_ E24-12V 2k
+R49 INT-7 Net-_Q7-Pad1_ 5k1
+R52 INT-7 Net-_Q9-Pad1_ 5k1
+R51 Net-_Q9-Pad1_ E24-12V 2k
+Q9 Net-_Q9-Pad1_ Net-_Q9-Pad2_ 0 BCY58
+R44 Net-_Q9-Pad2_ FF2 10k
+R19 Net-_D8-Pad1_ E14-PG 3k
+Q5 FF3 Net-_D8-Pad2_ 0 BCY58
+R20 FF4 E14-PG 3k
+D8 Net-_D8-Pad1_ Net-_D8-Pad2_ DIODE
+R29 Net-_C2-Pad1_ Net-_D8-Pad2_ 300
+C2 Net-_C2-Pad1_ Net-_C2-Pad2_ 2.2n
+R22 Net-_D9-Pad1_ E13-PG 3k
+R21 FF3 E13-PG 3k
+R34 0 Net-_D8-Pad2_ 180k
+R39 FF3 E24-12V 1k
+Q6 FF4 Net-_C2-Pad2_ 0 BCY58
+R35 0 Net-_C2-Pad2_ 180k
+R40 FF4 E24-12V 1k
+R45 Net-_Q9-Pad2_ FF3 10k
+R46 Net-_Q7-Pad2_ FF4 10k
+V5 E14-PG 0 pulse(0 3 45ms 2n 2n 60ms 180ms)
+V6 E13-PG 0 pulse(0 3 135ms 2n 2n 60ms 180ms)
+R48 AUX12-TGL E24-12V 1k
+Q8 AUX12-TGL INT-7 0 BCY58
+Q10 AUX11-TGL Net-_Q10-Pad2_ 0 BCY58
+R50 Net-_Q10-Pad2_ AUX12-TGL 10k
+R53 AUX11-TGL E24-12V 1k
+R54 AUX11-TGL Net-_C8-Pad2_ 1k3
+R55 Net-_R55-Pad1_ Net-_C8-Pad2_ 27k
+R56 Net-_R55-Pad1_ Net-_C7-Pad2_ 130k
+C8 Net-_C8-Pad1_ Net-_C8-Pad2_ 33n
+R57 Net-_C8-Pad1_ Net-_R57-Pad2_ 20k
+R58 Net-_R57-Pad2_ E24-12V 36k
+C7 0 Net-_C7-Pad2_ 470n
+R59 0 Net-_R57-Pad2_ 36k
+D13 Net-_C7-Pad2_ Net-_C8-Pad2_ DIODE
+D9 Net-_D9-Pad1_ Net-_C2-Pad2_ DIODE
+C4 AUX12-TGL Net-_C4-Pad2_ 6.8n
+C5 AUX11-TGL Net-_C5-Pad2_ 6.8n
+R30 Net-_C4-Pad2_ AUX1-10V 130k
+R31 0 Net-_C4-Pad2_ 68k
+D4 EDGES Net-_C4-Pad2_ DIODE
+R26 0 Net-_C5-Pad2_ 68k
+R25 Net-_C5-Pad2_ AUX1-10V 130k
+D5 EDGES Net-_C5-Pad2_ DIODE
+R23 EDGES AUX1-10V 100k
+VBOGUS1 Net-_V1-Pad1_ AUX1-10V dc(0)
+V1 Net-_V1-Pad1_ 0 dc(10)
+D15 EDGES E8-MPS DIODE
+D16 EDGES Net-_D16-Pad2_ DIODE
+Q11 AUX10-SP Net-_D16-Pad2_ 0 BCY58
+R65 0 Net-_D16-Pad2_ 180k
+R68 Net-_C9-Pad2_ Net-_D16-Pad2_ 300
+C9 Net-_C9-Pad1_ Net-_C9-Pad2_ 1.0n
+R67 Net-_C9-Pad1_ AUX10-SP 2k4
+Q12 BASE_PULSE Net-_C9-Pad1_ 0 BCY58
+R66 AUX10-SP AUX1-10V 2k
+R69 BASE_PULSE AUX1-10V 1k
+R64 E15-MPS AUX1-10V 510
+R63 E15-MPS Net-_D14-Pad2_ 2k2
+D14 Net-_D14-Pad1_ Net-_D14-Pad2_ DIODE
+R62 Net-_D14-Pad1_ AUX1-10V 1k2
+R61 Net-_D14-Pad1_ E1-T1 240
+R60 0 E1-T1 200
+V7 E10-MPS 0 dc(4.0)
+XTR1 BASE_PULSE E15-MPS E8-MPS E10-MPS mps vac=0
+.model DIODE D 
+.model BCY58 npn 
+.model BSX95 npn 
+.model AUY21 pnp 
+.tran 0.05ms 92ms 89m 
+.control 
+run 
+rusage 
+set filetype=ascii 
+set color0=white 
+set xbrushwidth=5 
+* pulse generator 0.05ms 400ms 100ms 
+*plot "V(E13-PG)" "V(E22-PG)"+4 "V(E14-PG)"+8 "V(E21-PG)"+12 
+* flip-flip and NOR output 0.05ms 400ms 100ms 
+*plot "V(INT-7)"+0 "V(E13-PG)"+2 "V(E22-PG)"+6 "V(E14-PG)"+10 "V(E21-PG)"+14 
+* toggle generation 0.05ms 400ms 100ms 
+*plot "V(AUX11-TGL)"+0 "V(AUX12-TGL)"+13 "V(INT-7)"+26 
+* edge generation 0.05ms 400ms 100ms 
+*plot "V(EDGES)"+0 "V(AUX11-TGL)"+6 "V(AUX12-TGL)"+20 
+* edge generation close up 0.05ms 92ms 89ms 
+plot "V(EDGES)"+0 "V(AUX11-TGL)"+6 "V(AUX12-TGL)"+20 
+* base pulse generation 0.05ms 92ms 89ms 
+*write "C:\Users\andy\OneDrive\Documents\MPS Tune-o-Matic\trunk\Simulation\Pressure Loop\PressureLoop.out" "V(BASE_PULSE)" "V(INT-7)" 
+*plot "V(EDGES)"+0 "V(E15-MPS)"+0 "V(E10-MPS)"+0 "V(BASE_PULSE)"+12 "V(E8-MPS)"+35 
+plot "V(EDGES)"+0 "V(E15-MPS)"+0 "V(E10-MPS)"+0 "V(BASE_PULSE)"+0 "V(E8-MPS)"+0 
+.endc 
+.end
