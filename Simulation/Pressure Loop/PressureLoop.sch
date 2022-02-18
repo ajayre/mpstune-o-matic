@@ -1753,8 +1753,6 @@ Wire Wire Line
 Connection ~ 13550 7450
 Wire Wire Line
 	13550 7450 17300 7450
-Text Notes 1350 6950 0    50   ~ 0
-.model DIODE D\n.model BCY58 npn\n.model BSX95 npn\n.model AUY21 pnp\n.tran 0.05ms 92ms 89m\n.control\nrun\nrusage\nset filetype=ascii\nset color0=white\nset xbrushwidth=5\nwrite "C:\Users\andy\OneDrive\Documents\MPS Tune-o-Matic\trunk\Simulation\Pressure Loop\PressureLoop.out" "V(BASE_PULSE)" "V(INT-7)"\nplot "V(BASE_PULSE)" "V(INT-7)"\n.endc\n
 Wire Wire Line
 	6150 12850 6150 12750
 Wire Wire Line
@@ -1788,4 +1786,6 @@ F 7 "MPS.lib" H 6350 13100 50  0001 C CNN "Spice_Lib_File"
 $EndComp
 Text Notes 850  4700 0    50   ~ 0
 Lower voltage = richer
+Text Notes 1350 9300 0    50   ~ 0
+.model DIODE D\n.model BCY58 npn\n.model BSX95 npn\n.model AUY21 pnp\n\n.tran 0.05ms 92ms 89m\n\n.control\nrun\nrusage\nset filetype=ascii\nset color0=white\nset xbrushwidth=5\n\n* pulse generator 0.05ms 400ms 100ms\n*plot "V(E13-PG)" "V(E22-PG)"+4 "V(E14-PG)"+8 "V(E21-PG)"+12\n\n* flip-flip and NOR output 0.05ms 400ms 100ms\n*plot "V(INT-7)"+0 "V(E13-PG)"+2 "V(E22-PG)"+6 "V(E14-PG)"+10 "V(E21-PG)"+14\n\n* toggle generation 0.05ms 400ms 100ms\n*plot "V(AUX11-TGL)"+0 "V(AUX12-TGL)"+13 "V(INT-7)"+26\n\n* edge generation 0.05ms 400ms 100ms\n*plot "V(EDGES)"+0 "V(AUX11-TGL)"+6 "V(AUX12-TGL)"+20\n\n* edge generation close up 0.05ms 92ms 89ms\nplot "V(EDGES)"+0 "V(AUX11-TGL)"+6 "V(AUX12-TGL)"+20\n\n* base pulse generation 0.05ms 92ms 89ms\n*write "C:\Users\andy\OneDrive\Documents\MPS Tune-o-Matic\trunk\Simulation\Pressure Loop\PressureLoop.out" "V(BASE_PULSE)" "V(INT-7)"\n*plot "V(EDGES)"+0 "V(E15-MPS)"+0 "V(E10-MPS)"+0 "V(BASE_PULSE)"+12 "V(E8-MPS)"+35\nplot "V(EDGES)"+0 "V(E15-MPS)"+0 "V(E10-MPS)"+0 "V(BASE_PULSE)"+0 "V(E8-MPS)"+0\n\n.endc\n
 $EndSCHEMATC

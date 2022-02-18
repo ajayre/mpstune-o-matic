@@ -85,8 +85,8 @@ D14 Net-_D14-Pad1_ Net-_D14-Pad2_ DIODE
 R62 Net-_D14-Pad1_ AUX1-10V 1k2
 R61 Net-_D14-Pad1_ E1-T1 240
 R60 0 E1-T1 200
-V7 E10-MPS 0 dc(7.0)
-XTR1 BASE_PULSE E15-MPS E8-MPS E10-MPS mps1
+V7 E10-MPS 0 dc(4.0)
+XTR1 BASE_PULSE E15-MPS E8-MPS E10-MPS mps vac=0
 .model DIODE D 
 .model BCY58 npn 
 .model BSX95 npn 
@@ -98,7 +98,19 @@ rusage
 set filetype=ascii 
 set color0=white 
 set xbrushwidth=5 
-write "C:\Users\andy\OneDrive\Documents\MPS Tune-o-Matic\trunk\Simulation\Pressure Loop\PressureLoop.out" "V(BASE_PULSE)" "V(INT-7)" 
-plot "V(BASE_PULSE)" "V(INT-7)" 
+* pulse generator 0.05ms 400ms 100ms 
+*plot "V(E13-PG)" "V(E22-PG)"+4 "V(E14-PG)"+8 "V(E21-PG)"+12 
+* flip-flip and NOR output 0.05ms 400ms 100ms 
+*plot "V(INT-7)"+0 "V(E13-PG)"+2 "V(E22-PG)"+6 "V(E14-PG)"+10 "V(E21-PG)"+14 
+* toggle generation 0.05ms 400ms 100ms 
+*plot "V(AUX11-TGL)"+0 "V(AUX12-TGL)"+13 "V(INT-7)"+26 
+* edge generation 0.05ms 400ms 100ms 
+*plot "V(EDGES)"+0 "V(AUX11-TGL)"+6 "V(AUX12-TGL)"+20 
+* edge generation close up 0.05ms 92ms 89ms 
+plot "V(EDGES)"+0 "V(AUX11-TGL)"+6 "V(AUX12-TGL)"+20 
+* base pulse generation 0.05ms 92ms 89ms 
+*write "C:\Users\andy\OneDrive\Documents\MPS Tune-o-Matic\trunk\Simulation\Pressure Loop\PressureLoop.out" "V(BASE_PULSE)" "V(INT-7)" 
+*plot "V(EDGES)"+0 "V(E15-MPS)"+0 "V(E10-MPS)"+0 "V(BASE_PULSE)"+12 "V(E8-MPS)"+35 
+plot "V(EDGES)"+0 "V(E15-MPS)"+0 "V(E10-MPS)"+0 "V(BASE_PULSE)"+0 "V(E8-MPS)"+0 
 .endc 
 .end
