@@ -1,0 +1,7 @@
+1. Use DB9 connector for MPS
+ - four pins for MPS
+ - 5V
+ - GND
+ - three generic I/O for future use
+
+2. Custom cable - DB9 to MPS connector (version Cush uses)
