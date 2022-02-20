@@ -616,9 +616,9 @@ Text Label 4700 6550 0    50   ~ 0
 MPS_PULSE
 Wire Wire Line
 	4700 6550 4600 6550
-Text Label 6050 2500 0    50   ~ 0
+Text Label 5450 2500 0    50   ~ 0
 MPS_STIMULUS
-Text Label 5750 3600 0    50   ~ 0
+Text Label 5450 3800 0    50   ~ 0
 MPS_PULSE
 Text Label 4700 6700 0    50   ~ 0
 MPS-7
@@ -648,10 +648,25 @@ Wire Wire Line
 	10000 4550 9850 4550
 Wire Wire Line
 	9850 4450 10000 4450
-Text Label 6150 2750 0    50   ~ 0
+Text Label 5450 3700 0    50   ~ 0
 IO0
-Text Label 6150 2850 0    50   ~ 0
+Text Label 5450 3600 0    50   ~ 0
 IO1
-Text Label 6150 2950 0    50   ~ 0
+Text Label 5450 3500 0    50   ~ 0
 IO2
+Wire Wire Line
+	5450 2500 5250 2500
+Wire Wire Line
+	5450 3800 5250 3800
+Wire Wire Line
+	5450 3500 5250 3500
+Wire Wire Line
+	5250 3600 5450 3600
+Wire Wire Line
+	5450 3700 5250 3700
+NoConn ~ 5250 2700
+NoConn ~ 5250 2800
+NoConn ~ 5250 3000
+NoConn ~ 3600 3200
+NoConn ~ 3600 3100
 $EndSCHEMATC

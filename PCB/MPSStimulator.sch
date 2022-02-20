@@ -61,14 +61,14 @@ $EndComp
 Wire Wire Line
 	4800 6250 4700 6250
 $Comp
-L Device:R_US R?
+L Device:R R?
 U 1 1 624C0ACD
 P 4700 6750
 F 0 "R?" H 4500 6800 50  0000 L CNN
 F 1 "180k" H 4450 6700 50  0000 L CNN
-F 2 "Upper Center K" V 4740 6740 50  0001 C CNN
+F 2 "" V 4740 6740 50  0001 C CNN
 F 3 "~" H 4700 6750 50  0001 C CNN
-F 4 "O Bk Br Gd = 300Ω ±5%" H 4700 6750 50  0001 C CNN "Notes"
+F 4 "" H 4700 6750 50  0001 C CNN "Notes"
 	1    4700 6750
 	1    0    0    1   
 $EndComp
@@ -85,14 +85,14 @@ Wire Wire Line
 	5100 6450 5100 7100
 Connection ~ 5100 7100
 $Comp
-L Device:R_US R?
+L Device:R R?
 U 1 1 625125B1
 P 5400 6550
 F 0 "R?" V 5500 6600 50  0000 L CNN
 F 1 "300" V 5500 6400 50  0000 L CNN
-F 2 "Upper Center K" V 5440 6540 50  0001 C CNN
+F 2 "" V 5440 6540 50  0001 C CNN
 F 3 "~" H 5400 6550 50  0001 C CNN
-F 4 "O Bk Br Gd = 300Ω ±5%" H 5400 6550 50  0001 C CNN "Notes"
+F 4 "" H 5400 6550 50  0001 C CNN "Notes"
 	1    5400 6550
 	0    1    1    0   
 $EndComp
@@ -118,14 +118,14 @@ Wire Wire Line
 Wire Wire Line
 	5800 6550 5550 6550
 $Comp
-L Device:R_US R?
+L Device:R R?
 U 1 1 6254B02E
 P 5400 5800
 F 0 "R?" V 5500 5850 50  0000 L CNN
 F 1 "2k4" V 5500 5700 50  0000 L CNN
-F 2 "Upper Center K" V 5440 5790 50  0001 C CNN
+F 2 "" V 5440 5790 50  0001 C CNN
 F 3 "~" H 5400 5800 50  0001 C CNN
-F 4 "O Bk Br Gd = 300Ω ±5%" H 5400 5800 50  0001 C CNN "Notes"
+F 4 "" H 5400 5800 50  0001 C CNN "Notes"
 	1    5400 5800
 	0    1    1    0   
 $EndComp
@@ -157,26 +157,26 @@ Wire Wire Line
 Wire Wire Line
 	5100 7100 6300 7100
 $Comp
-L Device:R_US R?
+L Device:R R?
 U 1 1 625BF40D
 P 5100 5250
 F 0 "R?" H 4900 5300 50  0000 L CNN
 F 1 "2k" H 4900 5200 50  0000 L CNN
-F 2 "Upper Center K" V 5140 5240 50  0001 C CNN
+F 2 "" V 5140 5240 50  0001 C CNN
 F 3 "~" H 5100 5250 50  0001 C CNN
-F 4 "O Bk Br Gd = 300Ω ±5%" H 5100 5250 50  0001 C CNN "Notes"
+F 4 "" H 5100 5250 50  0001 C CNN "Notes"
 	1    5100 5250
 	1    0    0    1   
 $EndComp
 $Comp
-L Device:R_US R?
+L Device:R R?
 U 1 1 625C0721
 P 6300 5250
 F 0 "R?" H 6100 5300 50  0000 L CNN
 F 1 "1k" H 6100 5200 50  0000 L CNN
-F 2 "Upper Center K" V 6340 5240 50  0001 C CNN
+F 2 "" V 6340 5240 50  0001 C CNN
 F 3 "~" H 6300 5250 50  0001 C CNN
-F 4 "O Bk Br Gd = 300Ω ±5%" H 6300 5250 50  0001 C CNN "Notes"
+F 4 "" H 6300 5250 50  0001 C CNN "Notes"
 	1    6300 5250
 	1    0    0    1   
 $EndComp
@@ -197,26 +197,26 @@ Wire Wire Line
 	6300 5550 6300 5600
 Connection ~ 6300 7100
 $Comp
-L Device:R_US R?
+L Device:R R?
 U 1 1 6270DFA3
 P 3250 4850
 F 0 "R?" H 3050 4900 50  0000 L CNN
 F 1 "510" H 3050 4800 50  0000 L CNN
-F 2 "Upper Center K" V 3290 4840 50  0001 C CNN
+F 2 "" V 3290 4840 50  0001 C CNN
 F 3 "~" H 3250 4850 50  0001 C CNN
-F 4 "O Bk Br Gd = 300Ω ±5%" H 3250 4850 50  0001 C CNN "Notes"
+F 4 "" H 3250 4850 50  0001 C CNN "Notes"
 	1    3250 4850
 	1    0    0    1   
 $EndComp
 $Comp
-L Device:R_US R?
+L Device:R R?
 U 1 1 6270E783
 P 2900 5100
 F 0 "R?" V 3000 5150 50  0000 L CNN
 F 1 "2k2" V 3000 5000 50  0000 L CNN
-F 2 "Upper Center K" V 2940 5090 50  0001 C CNN
+F 2 "" V 2940 5090 50  0001 C CNN
 F 3 "~" H 2900 5100 50  0001 C CNN
-F 4 "O Bk Br Gd = 300Ω ±5%" H 2900 5100 50  0001 C CNN "Notes"
+F 4 "" H 2900 5100 50  0001 C CNN "Notes"
 	1    2900 5100
 	0    1    1    0   
 $EndComp
@@ -242,14 +242,14 @@ $EndComp
 Wire Wire Line
 	2600 5100 2750 5100
 $Comp
-L Device:R_US R?
+L Device:R R?
 U 1 1 627AC88D
 P 2150 4850
 F 0 "R?" H 1950 4900 50  0000 L CNN
 F 1 "1k2" H 1950 4800 50  0000 L CNN
-F 2 "Upper Center K" V 2190 4840 50  0001 C CNN
+F 2 "" V 2190 4840 50  0001 C CNN
 F 3 "~" H 2150 4850 50  0001 C CNN
-F 4 "O Bk Br Gd = 300Ω ±5%" H 2150 4850 50  0001 C CNN "Notes"
+F 4 "" H 2150 4850 50  0001 C CNN "Notes"
 	1    2150 4850
 	1    0    0    1   
 $EndComp
@@ -262,14 +262,14 @@ Wire Wire Line
 Wire Wire Line
 	2150 5100 2150 5000
 $Comp
-L Device:R_US R?
+L Device:R R?
 U 1 1 627EDB3A
 P 1750 5100
 F 0 "R?" V 1850 5150 50  0000 L CNN
 F 1 "240" V 1850 4950 50  0000 L CNN
-F 2 "Upper Center K" V 1790 5090 50  0001 C CNN
+F 2 "" V 1790 5090 50  0001 C CNN
 F 3 "~" H 1750 5100 50  0001 C CNN
-F 4 "O Bk Br Gd = 300Ω ±5%" H 1750 5100 50  0001 C CNN "Notes"
+F 4 "" H 1750 5100 50  0001 C CNN "Notes"
 	1    1750 5100
 	0    1    1    0   
 $EndComp
@@ -312,40 +312,40 @@ $EndComp
 Wire Wire Line
 	7850 4400 8000 4400
 $Comp
-L Device:R_US R?
+L Device:R R?
 U 1 1 6213D2E2
 P 8150 4400
 F 0 "R?" H 8000 4450 50  0000 L CNN
 F 1 "20k" H 8000 4350 50  0000 L CNN
-F 2 "Upper Center K" V 8190 4390 50  0001 C CNN
+F 2 "" V 8190 4390 50  0001 C CNN
 F 3 "~" H 8150 4400 50  0001 C CNN
-F 4 "O Bk Br Gd = 300Ω ±5%" H 8150 4400 50  0001 C CNN "Notes"
+F 4 "" H 8150 4400 50  0001 C CNN "Notes"
 	1    8150 4400
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
 	8850 4600 8850 5700
 $Comp
-L Device:R_US R?
+L Device:R R?
 U 1 1 6211D27D
 P 8850 3850
 F 0 "R?" H 8700 3900 50  0000 L CNN
 F 1 "2k" H 8700 3800 50  0000 L CNN
-F 2 "Upper Center K" V 8890 3840 50  0001 C CNN
+F 2 "" V 8890 3840 50  0001 C CNN
 F 3 "~" H 8850 3850 50  0001 C CNN
-F 4 "O Bk Br Gd = 300Ω ±5%" H 8850 3850 50  0001 C CNN "Notes"
+F 4 "" H 8850 3850 50  0001 C CNN "Notes"
 	1    8850 3850
 	-1   0    0    1   
 $EndComp
 $Comp
-L Device:R_US R?
+L Device:R R?
 U 1 1 6213E6B1
 P 8450 4950
 F 0 "R?" H 8300 5000 50  0000 L CNN
 F 1 "10k" H 8300 4900 50  0000 L CNN
-F 2 "Upper Center K" V 8490 4940 50  0001 C CNN
+F 2 "" V 8490 4940 50  0001 C CNN
 F 3 "~" H 8450 4950 50  0001 C CNN
-F 4 "O Bk Br Gd = 300Ω ±5%" H 8450 4950 50  0001 C CNN "Notes"
+F 4 "" H 8450 4950 50  0001 C CNN "Notes"
 	1    8450 4950
 	1    0    0    -1  
 $EndComp
@@ -360,26 +360,26 @@ Wire Wire Line
 	8450 5700 8850 5700
 Connection ~ 8850 5700
 $Comp
-L Device:R_US R?
+L Device:R R?
 U 1 1 6214A30B
 P 9650 4350
 F 0 "R?" H 9500 4400 50  0000 L CNN
 F 1 "10k" H 9450 4300 50  0000 L CNN
-F 2 "Upper Center K" V 9690 4340 50  0001 C CNN
+F 2 "" V 9690 4340 50  0001 C CNN
 F 3 "~" H 9650 4350 50  0001 C CNN
-F 4 "O Bk Br Gd = 300Ω ±5%" H 9650 4350 50  0001 C CNN "Notes"
+F 4 "" H 9650 4350 50  0001 C CNN "Notes"
 	1    9650 4350
 	-1   0    0    1   
 $EndComp
 $Comp
-L Device:R_US R?
+L Device:R R?
 U 1 1 6214AC60
 P 9650 5050
 F 0 "R?" H 9500 5100 50  0000 L CNN
 F 1 "12k" H 9450 5000 50  0000 L CNN
-F 2 "Upper Center K" V 9690 5040 50  0001 C CNN
+F 2 "" V 9690 5040 50  0001 C CNN
 F 3 "~" H 9650 5050 50  0001 C CNN
-F 4 "O Bk Br Gd = 300Ω ±5%" H 9650 5050 50  0001 C CNN "Notes"
+F 4 "" H 9650 5050 50  0001 C CNN "Notes"
 	1    9650 5050
 	-1   0    0    1   
 $EndComp
@@ -406,14 +406,14 @@ Connection ~ 7800 2250
 Wire Wire Line
 	7800 2100 7800 2250
 $Comp
-L Device:R_US R?
+L Device:R R?
 U 1 1 62182801
 P 7800 2600
 F 0 "R?" V 7700 2500 50  0000 L CNN
 F 1 "1k" V 7900 2500 50  0000 L CNN
-F 2 "Upper Center K" V 7840 2590 50  0001 C CNN
+F 2 "" V 7840 2590 50  0001 C CNN
 F 3 "~" H 7800 2600 50  0001 C CNN
-F 4 "O Bk Br Gd = 300Ω ±5%" H 7800 2600 50  0001 C CNN "Notes"
+F 4 "" H 7800 2600 50  0001 C CNN "Notes"
 	1    7800 2600
 	-1   0    0    1   
 $EndComp
@@ -649,14 +649,14 @@ F 4 "" H 5100 1900 50  0001 C CNN "Notes"
 	1    0    0    1   
 $EndComp
 $Comp
-L Device:R_US R?
+L Device:R R?
 U 1 1 6207E46F
 P 5100 3200
 F 0 "R?" H 4900 3250 50  0000 L CNN
 F 1 "68k" H 4850 3150 50  0000 L CNN
-F 2 "Upper Center K" V 5140 3190 50  0001 C CNN
+F 2 "" V 5140 3190 50  0001 C CNN
 F 3 "~" H 5100 3200 50  0001 C CNN
-F 4 "O Bk Br Gd = 300Ω ±5%" H 5100 3200 50  0001 C CNN "Notes"
+F 4 "" H 5100 3200 50  0001 C CNN "Notes"
 	1    5100 3200
 	1    0    0    1   
 $EndComp
@@ -681,14 +681,14 @@ $EndComp
 Wire Wire Line
 	5600 2200 5100 2200
 $Comp
-L Device:R_US R?
+L Device:R R?
 U 1 1 620C6553
 P 5450 3200
 F 0 "R?" H 5250 3250 50  0000 L CNN
 F 1 "68k" H 5200 3150 50  0000 L CNN
-F 2 "Upper Center K" V 5490 3190 50  0001 C CNN
+F 2 "" V 5490 3190 50  0001 C CNN
 F 3 "~" H 5450 3200 50  0001 C CNN
-F 4 "O Bk Br Gd = 300Ω ±5%" H 5450 3200 50  0001 C CNN "Notes"
+F 4 "" H 5450 3200 50  0001 C CNN "Notes"
 	1    5450 3200
 	1    0    0    1   
 $EndComp

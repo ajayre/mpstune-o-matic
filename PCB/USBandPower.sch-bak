@@ -768,6 +768,8 @@ $Comp
 L Connector:Screw_Terminal_01x02 J?
 U 1 1 62339686
 P 1500 5700
+AR Path="/62339686" Ref="J?"  Part="1" 
+AR Path="/60479334/62339686" Ref="J?"  Part="1" 
 F 0 "J?" H 1580 5692 50  0000 L CNN
 F 1 "12V IN" H 1580 5601 50  0000 L CNN
 F 2 "Britishideas:PhoenixContact_COMBICON_MKDSN_2" H 1500 5700 50  0001 C CNN
