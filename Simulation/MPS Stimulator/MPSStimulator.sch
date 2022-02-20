@@ -649,18 +649,6 @@ $EndComp
 Wire Wire Line
 	8850 7700 9100 7700
 Connection ~ 9100 7700
-$Comp
-L Device:R_US R60
-U 1 1 6280EC00
-P 8050 8100
-F 0 "R60" V 7950 8000 50  0000 L CNN
-F 1 "200" V 8150 8000 50  0000 L CNN
-F 2 "Upper Center K" V 8090 8090 50  0001 C CNN
-F 3 "~" H 8050 8100 50  0001 C CNN
-F 4 "O Bk Br Gd = 300Ω ±5%" H 8050 8100 50  0001 C CNN "Notes"
-	1    8050 8100
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	8550 7700 8050 7700
 Wire Wire Line
@@ -678,12 +666,12 @@ L Simulation_SPICE:VDC V7
 U 1 1 628A2F39
 P 1300 4250
 F 0 "V7" H 1430 4341 50  0000 L CNN
-F 1 "4" H 1430 4250 50  0000 L CNN
+F 1 "5" H 1430 4250 50  0000 L CNN
 F 2 "" H 1300 4250 50  0001 C CNN
 F 3 "~" H 1300 4250 50  0001 C CNN
 F 4 "Y" H 1300 4250 50  0001 L CNN "Spice_Netlist_Enabled"
 F 5 "V" H 1300 4250 50  0001 L CNN "Spice_Primitive"
-F 6 "dc(4.0)" H 1430 4159 50  0000 L CNN "Spice_Model"
+F 6 "dc(5.0)" H 1430 4159 50  0000 L CNN "Spice_Model"
 	1    1300 4250
 	1    0    0    -1  
 $EndComp
@@ -694,19 +682,16 @@ Wire Wire Line
 Connection ~ 1950 4600
 Wire Wire Line
 	1300 4050 1300 3000
-Connection ~ 10050 8850
 Wire Wire Line
 	10050 8500 10050 8850
 Wire Wire Line
 	9950 8500 10050 8500
 Text GLabel 9950 8500 0    50   Input ~ 0
 E10-MPS
-Text GLabel 9950 8850 0    50   Input ~ 0
+Text GLabel 8800 8300 0    50   Input ~ 0
 INT-6
 Wire Wire Line
-	9950 8850 10050 8850
-Wire Wire Line
-	8050 9700 12700 9700
+	8050 9700 9100 9700
 Connection ~ 12700 9700
 Wire Wire Line
 	10200 7250 13100 7250
@@ -747,7 +732,7 @@ $EndComp
 Text Notes 850  4700 0    50   ~ 0
 Lower voltage = richer
 Text Notes 1350 9300 0    50   ~ 0
-.model DIODE D\n.model BCY58 npn\n.model BSX95 npn\n.model AUY21 pnp\n\n.tran 0.05ms 100ms 89m\n\n.control\nrun\nrusage\nset filetype=ascii\nset color0=white\nset xbrushwidth=5\n\n*write "C:\Users\andy\OneDrive\Documents\MPS Tune-o-Matic\trunk\Simulation\Pressure Loop\PressureLoop.out" "V(BASE_PULSE)" "V(INT-7)"\nplot "V(IN)"+0 "V(OUT)"+0\n\n.endc\n
+.model DIODE D\n.model BCY58 npn\n.model BSX95 npn\n.model AUY21 pnp\n\n.tran 0.05ms 100ms 89m\n\n.control\nrun\nrusage\nset filetype=ascii\nset color0=white\nset xbrushwidth=5\n\n*write "C:\Users\andy\OneDrive\Documents\MPS Tune-o-Matic\trunk\Simulation\Pressure Loop\PressureLoop.out" "V(BASE_PULSE)" "V(INT-7)"\nplot "V(IN)"+0 "V(BASE_PULSE)"+6 "V(OUT)"+33\n\n.endc\n
 Wire Wire Line
 	15200 3900 14150 3900
 Wire Wire Line
@@ -884,7 +869,7 @@ L Device:R_US R4
 U 1 1 6214A30B
 P 18100 8350
 F 0 "R4" H 17950 8400 50  0000 L CNN
-F 1 "10k" H 17950 8300 50  0000 L CNN
+F 1 "10k" H 17900 8300 50  0000 L CNN
 F 2 "Upper Center K" V 18140 8340 50  0001 C CNN
 F 3 "~" H 18100 8350 50  0001 C CNN
 F 4 "O Bk Br Gd = 300Ω ±5%" H 18100 8350 50  0001 C CNN "Notes"
@@ -896,7 +881,7 @@ L Device:R_US R5
 U 1 1 6214AC60
 P 18100 9050
 F 0 "R5" H 17950 9100 50  0000 L CNN
-F 1 "10k" H 17950 9000 50  0000 L CNN
+F 1 "12k" H 17900 9000 50  0000 L CNN
 F 2 "Upper Center K" V 18140 9040 50  0001 C CNN
 F 3 "~" H 18100 9050 50  0001 C CNN
 F 4 "O Bk Br Gd = 300Ω ±5%" H 18100 9050 50  0001 C CNN "Notes"
@@ -919,4 +904,55 @@ Wire Wire Line
 Connection ~ 18100 8700
 Wire Wire Line
 	18100 8700 18100 8500
+Connection ~ 9100 9700
+Wire Wire Line
+	9100 9700 12700 9700
+Wire Wire Line
+	9100 8300 8800 8300
+Wire Wire Line
+	9100 9350 9100 9700
+Wire Wire Line
+	9100 8400 9100 8300
+Connection ~ 10050 8850
+Wire Wire Line
+	9100 8850 10050 8850
+Wire Wire Line
+	9100 8850 9100 9050
+Connection ~ 9100 8850
+Wire Wire Line
+	9100 8700 9100 8850
+$Comp
+L Device:R_US R7
+U 1 1 62182801
+P 9100 9200
+F 0 "R7" V 9000 9100 50  0000 L CNN
+F 1 "1k" V 9200 9100 50  0000 L CNN
+F 2 "Upper Center K" V 9140 9190 50  0001 C CNN
+F 3 "~" H 9100 9200 50  0001 C CNN
+F 4 "O Bk Br Gd = 300Ω ±5%" H 9100 9200 50  0001 C CNN "Notes"
+	1    9100 9200
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:Varistor RV1
+U 1 1 621ABE67
+P 9100 8550
+F 0 "RV1" H 9203 8596 50  0000 L CNN
+F 1 "5k" H 9203 8505 50  0000 L CNN
+F 2 "" V 9030 8550 50  0001 C CNN
+F 3 "~" H 9100 8550 50  0001 C CNN
+	1    9100 8550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Varistor RV2
+U 1 1 621AEB7C
+P 8050 8100
+F 0 "RV2" H 8153 8146 50  0000 L CNN
+F 1 "1k" H 8153 8055 50  0000 L CNN
+F 2 "" V 7980 8100 50  0001 C CNN
+F 3 "~" H 8050 8100 50  0001 C CNN
+	1    8050 8100
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

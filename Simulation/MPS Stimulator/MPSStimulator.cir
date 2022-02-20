@@ -32,8 +32,7 @@ R63 E15-MPS Net-_D14-Pad2_ 2k2
 D14 Net-_D14-Pad1_ Net-_D14-Pad2_ DIODE
 R62 Net-_D14-Pad1_ AUX1-10V 1k2
 R61 Net-_D14-Pad1_ E1-T1 240
-R60 0 E1-T1 200
-V7 E10-MPS 0 dc(4.0)
+V7 INT-6 0 dc(5.0)
 XTR1 BASE_PULSE E15-MPS E8-MPS E10-MPS mps vac=15
 C4 AUX12-TGL Net-_C4-Pad2_ 6.8n
 V8 IN 0 pulse(0 5 2n 2n 2n 3ms 6ms)
@@ -42,7 +41,10 @@ R2 BASE_PULSE Net-_Q1-Pad2_ 20k
 R1 Net-_Q1-Pad1_ AUX1-10V 2k
 R3 Net-_Q1-Pad2_ 0 10k
 R4 OUT Net-_Q1-Pad1_ 10k
-R5 0 OUT 10k
+R5 0 OUT 12k
+R7 0 E10-MPS 1k
+RV1 INT-6 E10-MPS 5k
+RV2 E1-T1 0 1k
 .model DIODE D 
 .model BCY58 npn 
 .model BSX95 npn 
@@ -55,6 +57,6 @@ set filetype=ascii
 set color0=white 
 set xbrushwidth=5 
 *write "C:\Users\andy\OneDrive\Documents\MPS Tune-o-Matic\trunk\Simulation\Pressure Loop\PressureLoop.out" "V(BASE_PULSE)" "V(INT-7)" 
-plot "V(IN)"+0 "V(OUT)"+0 
+plot "V(IN)"+0 "V(BASE_PULSE)"+6 "V(OUT)"+33 
 .endc 
 .end
