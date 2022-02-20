@@ -5,3 +5,18 @@
  - three generic I/O for future use
 
 2. Custom cable - DB9 to MPS connector (version Cush uses)
+
+3. Do we need pots for calibration so all MPS tune-o-matics produce the same pulse width under the same conditions for the same MPS? Could calibration be done without an MPS?
+Obvious place is the SC+IM bias voltage
+
+4. Calibration pot for air temp - set to specific voltage
+
+5. Expose calibration pots through holes in case to fit a small screwdriver?
+
+6. Calibration mode on touch screen:
+
+  - connect reference MPS
+  - turn calib pot to desired target pulse width
+  - confirm
+
+this stores target pulse width in nvol

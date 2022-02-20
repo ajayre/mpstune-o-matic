@@ -3,11 +3,11 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 5 6
+Sheet 5 7
 Title "MPS Tune-o-Matic"
-Date "2021-12-06"
+Date "2022-02-19"
 Rev "V1.0"
-Comp "(C) andy@britishideas.com 2021"
+Comp "(C) andy@britishideas.com 2022"
 Comment1 "For Bosch D-Jetronic MPS Type 3"
 Comment2 ""
 Comment3 ""

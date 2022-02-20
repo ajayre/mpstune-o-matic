@@ -3,11 +3,11 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 6
+Sheet 2 3
 Title "MPS Tune-o-Matic"
-Date "2021-12-06"
+Date "2022-02-19"
 Rev "V1.0"
-Comp "(C) andy@britishideas.com 2021"
+Comp "(C) andy@britishideas.com 2022"
 Comment1 "For Bosch D-Jetronic MPS Type 3"
 Comment2 ""
 Comment3 ""
@@ -736,4 +736,68 @@ F 3 "" H 7550 2400 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	7550 2400 7550 2550
+$Comp
+L power:+12V #PWR?
+U 1 1 62339678
+P 1750 5350
+AR Path="/62339678" Ref="#PWR?"  Part="1" 
+AR Path="/60479334/62339678" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 1750 5200 50  0001 C CNN
+F 1 "+12V" H 1765 5523 50  0000 C CNN
+F 2 "" H 1750 5350 50  0001 C CNN
+F 3 "" H 1750 5350 50  0001 C CNN
+	1    1750 5350
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG?
+U 1 1 6233967E
+P 1750 5400
+AR Path="/6233967E" Ref="#FLG?"  Part="1" 
+AR Path="/60479334/6233967E" Ref="#FLG?"  Part="1" 
+F 0 "#FLG?" H 1750 5475 50  0001 C CNN
+F 1 "PWR_FLAG" V 1750 5528 50  0000 L CNN
+F 2 "" H 1750 5400 50  0001 C CNN
+F 3 "~" H 1750 5400 50  0001 C CNN
+	1    1750 5400
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	1750 5400 1750 5350
+$Comp
+L Connector:Screw_Terminal_01x02 J?
+U 1 1 62339686
+P 1500 5700
+AR Path="/62339686" Ref="J?"  Part="1" 
+AR Path="/60479334/62339686" Ref="J?"  Part="1" 
+F 0 "J?" H 1580 5692 50  0000 L CNN
+F 1 "12V IN" H 1580 5601 50  0000 L CNN
+F 2 "Britishideas:PhoenixContact_COMBICON_MKDSN_2" H 1500 5700 50  0001 C CNN
+F 3 "~" H 1500 5700 50  0001 C CNN
+F 4 "1729018" H 1500 5700 50  0001 C CNN "manf#"
+	1    1500 5700
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6233968C
+P 1750 5900
+AR Path="/6233968C" Ref="#PWR?"  Part="1" 
+AR Path="/60479334/6233968C" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 1750 5650 50  0001 C CNN
+F 1 "GND" H 1755 5727 50  0000 C CNN
+F 2 "" H 1750 5900 50  0001 C CNN
+F 3 "" H 1750 5900 50  0001 C CNN
+	1    1750 5900
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	1750 5900 1750 5700
+Wire Wire Line
+	1750 5700 1700 5700
+Wire Wire Line
+	1700 5600 1750 5600
+Wire Wire Line
+	1750 5600 1750 5400
+Connection ~ 1750 5400
 $EndSCHEMATC
