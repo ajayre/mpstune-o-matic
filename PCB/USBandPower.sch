@@ -84,7 +84,7 @@ AR Path="/604917D2" Ref="C?"  Part="1"
 AR Path="/60479334/604917D2" Ref="C14"  Part="1" 
 F 0 "C14" H 8850 3200 50  0000 L CNN
 F 1 "4.7uF" H 8750 3100 50  0000 L CNN
-F 2 "Capacitor_SMD:CP_Elec_4x5.8" H 9138 3000 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 9138 3000 50  0001 C CNN
 F 3 "~" H 9100 3150 50  0001 C CNN
 	1    9100 3150
 	1    0    0    -1  
@@ -274,16 +274,16 @@ $EndComp
 Wire Wire Line
 	2750 1650 2750 1750
 $Comp
-L Connector:USB_B_Mini J?
+L Connector:USB_B_Micro J?
 U 1 1 6049775F
 P 2050 2500
 AR Path="/6049775F" Ref="J?"  Part="1" 
 AR Path="/60479334/6049775F" Ref="J5"  Part="1" 
 F 0 "J5" H 2107 2967 50  0000 C CNN
-F 1 "USB_B_Mini" H 2107 2876 50  0000 C CNN
-F 2 "Connector_USB:USB_Mini-B_Wuerth_65100516121_Horizontal" H 2200 2450 50  0001 C CNN
+F 1 "USB_B_Micro" H 2107 2876 50  0000 C CNN
+F 2 "Connector_USB:USB_Micro-B_Amphenol_10103594-0001LF_Horizontal" H 2200 2450 50  0001 C CNN
 F 3 "~" H 2200 2450 50  0001 C CNN
-F 4 "65100516121" H 2050 2500 50  0001 C CNN "manf#"
+F 4 "10103594-0001LF" H 2050 2500 50  0001 C CNN "manf#"
 	1    2050 2500
 	1    0    0    -1  
 $EndComp
