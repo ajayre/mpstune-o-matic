@@ -84,7 +84,7 @@ AR Path="/604917D2" Ref="C?"  Part="1"
 AR Path="/60479334/604917D2" Ref="C14"  Part="1" 
 F 0 "C14" H 8850 3200 50  0000 L CNN
 F 1 "4.7uF" H 8750 3100 50  0000 L CNN
-F 2 "Capacitor_SMD:CP_Elec_4x5.8" H 9138 3000 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 9138 3000 50  0001 C CNN
 F 3 "~" H 9100 3150 50  0001 C CNN
 	1    9100 3150
 	1    0    0    -1  
