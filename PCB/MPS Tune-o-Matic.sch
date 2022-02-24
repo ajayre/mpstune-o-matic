@@ -590,24 +590,9 @@ F 3 "" H 8950 5250 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	8950 4100 8950 4300
-Wire Wire Line
-	8950 4300 9500 4300
-Wire Wire Line
 	8950 5250 8950 4700
 Wire Wire Line
 	8950 4700 9500 4700
-$Comp
-L power:+5V #PWR010
-U 1 1 6214D24D
-P 8950 4100
-F 0 "#PWR010" H 8950 3950 50  0001 C CNN
-F 1 "+5V" H 8965 4273 50  0000 C CNN
-F 2 "" H 8950 4100 50  0001 C CNN
-F 3 "" H 8950 4100 50  0001 C CNN
-	1    8950 4100
-	-1   0    0    -1  
-$EndComp
 Text Label 4050 5950 2    50   ~ 0
 MPS_STIMULUS
 Wire Wire Line
@@ -636,37 +621,36 @@ Wire Wire Line
 	5150 6200 5050 6200
 Wire Wire Line
 	5050 6100 5150 6100
-Text Label 9350 4400 2    50   ~ 0
-IO0
-Text Label 9350 4500 2    50   ~ 0
-IO1
-Text Label 9350 4600 2    50   ~ 0
-IO2
-Wire Wire Line
-	9350 4600 9500 4600
-Wire Wire Line
-	9500 4500 9350 4500
-Wire Wire Line
-	9350 4400 9500 4400
-Text Label 5450 3700 0    50   ~ 0
-IO0
-Text Label 5450 3600 0    50   ~ 0
-IO1
-Text Label 5450 3500 0    50   ~ 0
-IO2
 Wire Wire Line
 	5450 2500 5250 2500
 Wire Wire Line
 	5450 3800 5250 3800
-Wire Wire Line
-	5450 3500 5250 3500
-Wire Wire Line
-	5250 3600 5450 3600
-Wire Wire Line
-	5450 3700 5250 3700
 NoConn ~ 5250 2700
 NoConn ~ 5250 2800
 NoConn ~ 5250 3000
 NoConn ~ 3600 3200
 NoConn ~ 3600 3100
+Wire Wire Line
+	8950 4300 9500 4300
+Wire Wire Line
+	8950 4300 8950 4400
+Connection ~ 8950 4700
+Wire Wire Line
+	9500 4400 8950 4400
+Connection ~ 8950 4400
+Wire Wire Line
+	8950 4400 8950 4500
+Wire Wire Line
+	9500 4500 8950 4500
+Connection ~ 8950 4500
+Wire Wire Line
+	8950 4500 8950 4600
+Wire Wire Line
+	9500 4600 8950 4600
+Connection ~ 8950 4600
+Wire Wire Line
+	8950 4600 8950 4700
+NoConn ~ 5250 3500
+NoConn ~ 5250 3600
+NoConn ~ 5250 3700
 $EndSCHEMATC
