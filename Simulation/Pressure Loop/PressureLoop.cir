@@ -1,8 +1,8 @@
 .title KiCad schematic
 .include "MPS.lib"
 V2 Net-_V2-Pad1_ 0 dc(12)
-V3 E22-PG 0 pulse(0 3 2n 2n 2n 60ms 180ms)
-V4 E21-PG 0 pulse(0 3 90ms 2n 2n 60ms 180ms)
+V3 E22-PG 0 pulse(0 3 2n 2n 2n 120ms 180ms)
+V4 E21-PG 0 pulse(0 3 90ms 2n 2n 120ms 180ms)
 VBOGUS2 Net-_V2-Pad1_ E24-12V dc(0)
 R15 Net-_D6-Pad1_ E22-PG 3k
 Q3 FF1 Net-_D6-Pad2_ 0 BCY58
@@ -41,8 +41,7 @@ R35 0 Net-_C2-Pad2_ 180k
 R40 FF4 E24-12V 1k
 R45 Net-_Q9-Pad2_ FF3 10k
 R46 Net-_Q7-Pad2_ FF4 10k
-V5 E14-PG 0 pulse(0 3 45ms 2n 2n 60ms 180ms)
-V6 E13-PG 0 pulse(0 3 135ms 2n 2n 60ms 180ms)
+V5 E14-PG 0 pulse(0 3 45ms 2n 2n 120ms 180ms)
 R48 AUX12-TGL E24-12V 1k
 Q8 AUX12-TGL INT-7 0 BCY58
 Q10 AUX11-TGL Net-_Q10-Pad2_ 0 BCY58
@@ -85,13 +84,14 @@ D14 Net-_D14-Pad1_ Net-_D14-Pad2_ DIODE
 R62 Net-_D14-Pad1_ AUX1-10V 1k2
 R61 Net-_D14-Pad1_ E1-T1 240
 R60 0 E1-T1 200
-V7 E10-MPS 0 dc(4.0)
+V7 E10-MPS 0 dc(2.0)
 XTR1 BASE_PULSE E15-MPS E8-MPS E10-MPS mps vac=15
+V6 E13-PG 0 pwl (0 0 135ms 0 135.1ms 3 255ms 3 255.1ms 0 315ms 0) r=0
 .model DIODE D 
 .model BCY58 npn 
 .model BSX95 npn 
 .model AUY21 pnp 
-.tran 0.05ms 400ms 100m 
+.tran 0.05ms 260ms 253m 
 .control 
 run 
 rusage 
@@ -99,7 +99,8 @@ set filetype=ascii
 set color0=white 
 set xbrushwidth=5 
 * pulse generator 0.05ms 400ms 100ms 
-plot "V(E13-PG)" "V(E22-PG)"+4 "V(E14-PG)"+8 "V(E21-PG)"+12 
+* plot "V(E13-PG)" "V(E22-PG)"+4 "V(E14-PG)"+8 "V(E21-PG)"+12 "V(BASE_PULSE)" 
+plot "V(E13-PG)"+25 "V(BASE_PULSE)" 
 * flip-flip and NOR output 0.05ms 400ms 100ms 
 *plot "V(INT-7)"+0 "V(E13-PG)"+2 "V(E22-PG)"+6 "V(E14-PG)"+10 "V(E21-PG)"+14 
 * toggle generation 0.05ms 400ms 100ms 
@@ -114,10 +115,13 @@ plot "V(E13-PG)" "V(E22-PG)"+4 "V(E14-PG)"+8 "V(E21-PG)"+12
 *plot "V(EDGES)"+0 "V(E15-MPS)"+0 "V(E10-MPS)"+0 "V(BASE_PULSE)"+0 "V(E8-MPS)"+0 
 meas tran high trig v(E13-PG) val=1.5 rise=1 targ v(E13-PG) val=1.5 fall=1 
 meas tran low trig v(E13-PG) val=1.5 fall=1 targ v(E13-PG) val=1.5 rise=2 
+meas tran pulsewidth trig v(BASE_PULSE) val=5 fall=1 targ v(BASE_PULSE) val=5 rise=1 
 let period = low+high 
-let dutycycle = high/period 
+let dutycycle = low/period 
 let circle = 360 
 let dwellsci = circle * dutycycle 
 echo dwell = $&dwellsci 
+let pulsewidthms = pulsewidth * 1000 
+echo pulsewidth2 = $&pulsewidthms 
 .endc 
 .end

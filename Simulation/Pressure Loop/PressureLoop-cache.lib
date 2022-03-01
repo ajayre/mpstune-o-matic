@@ -131,6 +131,25 @@ X ~ 2 0 -200 100 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
+# Simulation_SPICE_VPWL
+#
+DEF Simulation_SPICE_VPWL V 0 1 N Y 1 F N
+F0 "V" 100 100 50 H V L CNN
+F1 "Simulation_SPICE_VPWL" 100 0 50 H V L CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+F4 "Y" 0 0 50 H I L CNN "Spice_Netlist_Enabled"
+F5 "V" 0 0 50 H I L CNN "Spice_Primitive"
+F6 "pwl(0 -1 50n -1 51n 0 97n 1 171n -1 200n -1)" 100 -100 50 H V L CNN "Spice_Model"
+DRAW
+C 0 0 100 0 1 10 f
+T 0 0 75 50 0 0 0 + Normal 0 C C
+P 5 0 0 0 -70 -40 -30 40 -10 0 30 0 50 50 N
+X ~ 1 0 200 100 D 50 50 1 1 P
+X ~ 2 0 -200 100 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
 # Transistor_BJT_BC547
 #
 DEF Transistor_BJT_BC547 Q 0 0 Y N 1 F N

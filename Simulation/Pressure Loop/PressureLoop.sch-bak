@@ -45,7 +45,7 @@ F 2 "" H 3300 4250 50  0001 C CNN
 F 3 "~" H 3300 4250 50  0001 C CNN
 F 4 "Y" H 3300 4250 50  0001 L CNN "Spice_Netlist_Enabled"
 F 5 "V" H 3300 4250 50  0001 L CNN "Spice_Primitive"
-F 6 "pulse(0 3 2n 2n 2n 60ms 180ms)" H 3430 4159 50  0000 L CNN "Spice_Model"
+F 6 "pulse(0 3 2n 2n 2n 120ms 180ms)" H 3430 4159 50  0000 L CNN "Spice_Model"
 	1    3300 4250
 	1    0    0    -1  
 $EndComp
@@ -61,7 +61,7 @@ F 2 "" H 3900 4050 50  0001 C CNN
 F 3 "~" H 3900 4050 50  0001 C CNN
 F 4 "Y" H 3900 4050 50  0001 L CNN "Spice_Netlist_Enabled"
 F 5 "V" H 3900 4050 50  0001 L CNN "Spice_Primitive"
-F 6 "pulse(0 3 90ms 2n 2n 60ms 180ms)" H 4030 3959 50  0000 L CNN "Spice_Model"
+F 6 "pulse(0 3 90ms 2n 2n 120ms 180ms)" H 4030 3959 50  0000 L CNN "Spice_Model"
 	1    3900 4050
 	1    0    0    -1  
 $EndComp
@@ -843,26 +843,12 @@ F 2 "" H 4450 3750 50  0001 C CNN
 F 3 "~" H 4450 3750 50  0001 C CNN
 F 4 "Y" H 4450 3750 50  0001 L CNN "Spice_Netlist_Enabled"
 F 5 "V" H 4450 3750 50  0001 L CNN "Spice_Primitive"
-F 6 "pulse(0 3 45ms 2n 2n 60ms 180ms)" H 4580 3659 50  0000 L CNN "Spice_Model"
+F 6 "pulse(0 3 45ms 2n 2n 120ms 180ms)" H 4580 3659 50  0000 L CNN "Spice_Model"
 	1    4450 3750
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	4450 4600 4450 3950
-$Comp
-L Simulation_SPICE:VPULSE V6
-U 1 1 61DE27AE
-P 5050 3550
-F 0 "V6" H 5180 3641 50  0000 L CNN
-F 1 "VPULSE" H 5180 3550 50  0000 L CNN
-F 2 "" H 5050 3550 50  0001 C CNN
-F 3 "~" H 5050 3550 50  0001 C CNN
-F 4 "Y" H 5050 3550 50  0001 L CNN "Spice_Netlist_Enabled"
-F 5 "V" H 5050 3550 50  0001 L CNN "Spice_Primitive"
-F 6 "pulse(0 3 135ms 2n 2n 60ms 180ms)" H 5180 3459 50  0000 L CNN "Spice_Model"
-	1    5050 3550
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5050 3750 5050 4600
 Wire Wire Line
@@ -1707,12 +1693,12 @@ L Simulation_SPICE:VDC V7
 U 1 1 628A2F39
 P 1300 4250
 F 0 "V7" H 1430 4341 50  0000 L CNN
-F 1 "4" H 1430 4250 50  0000 L CNN
+F 1 "2" H 1430 4250 50  0000 L CNN
 F 2 "" H 1300 4250 50  0001 C CNN
 F 3 "~" H 1300 4250 50  0001 C CNN
 F 4 "Y" H 1300 4250 50  0001 L CNN "Spice_Netlist_Enabled"
 F 5 "V" H 1300 4250 50  0001 L CNN "Spice_Primitive"
-F 6 "dc(4.0)" H 1430 4159 50  0000 L CNN "Spice_Model"
+F 6 "dc(2.0)" H 1430 4159 50  0000 L CNN "Spice_Model"
 	1    1300 4250
 	1    0    0    -1  
 $EndComp
@@ -1786,6 +1772,22 @@ F 7 "MPS.lib" H 6350 13100 50  0001 C CNN "Spice_Lib_File"
 $EndComp
 Text Notes 850  4700 0    50   ~ 0
 Lower voltage = richer
-Text Notes 1350 9300 0    50   ~ 0
-.model DIODE D\n.model BCY58 npn\n.model BSX95 npn\n.model AUY21 pnp\n\n.tran 0.05ms 400ms 100m\n\n.control\nrun\nrusage\nset filetype=ascii\nset color0=white\nset xbrushwidth=5\n\n* pulse generator 0.05ms 400ms 100ms\nplot "V(E13-PG)" "V(E22-PG)"+4 "V(E14-PG)"+8 "V(E21-PG)"+12\n\n* flip-flip and NOR output 0.05ms 400ms 100ms\n*plot "V(INT-7)"+0 "V(E13-PG)"+2 "V(E22-PG)"+6 "V(E14-PG)"+10 "V(E21-PG)"+14\n\n* toggle generation 0.05ms 400ms 100ms\n*plot "V(AUX11-TGL)"+0 "V(AUX12-TGL)"+13 "V(INT-7)"+26\n\n* edge generation 0.05ms 400ms 100ms\n*plot "V(EDGES)"+0 "V(AUX11-TGL)"+6 "V(AUX12-TGL)"+20\n\n* edge generation close up 0.05ms 92ms 89ms\n*plot "V(EDGES)"+0 "V(AUX11-TGL)"+6 "V(AUX12-TGL)"+20\n\n* base pulse generation 0.05ms 92ms 89ms\n*write "C:\Users\andy\OneDrive\Documents\MPS Tune-o-Matic\trunk\Simulation\Pressure Loop\PressureLoop.out" "V(BASE_PULSE)" "V(INT-7)"\n*plot "V(EDGES)"+0 "V(E15-MPS)"+0 "V(E10-MPS)"+0 "V(BASE_PULSE)"+12 "V(E8-MPS)"+35\n*plot "V(EDGES)"+0 "V(E15-MPS)"+0 "V(E10-MPS)"+0 "V(BASE_PULSE)"+0 "V(E8-MPS)"+0\n\nmeas tran high trig v(E13-PG) val=1.5 rise=1 targ v(E13-PG) val=1.5 fall=1\nmeas tran low trig v(E13-PG) val=1.5 fall=1 targ v(E13-PG) val=1.5 rise=2\nlet period = low+high\nlet dutycycle = high/period\nlet circle = 360\nlet dwellsci = circle * dutycycle\necho dwell = $&dwellsci\n\n.endc\n
+Text Notes 1550 8950 0    50   ~ 0
+.model DIODE D\n.model BCY58 npn\n.model BSX95 npn\n.model AUY21 pnp\n\n.tran 0.05ms 260ms 253m\n\n.control\nrun\nrusage\nset filetype=ascii\nset color0=white\nset xbrushwidth=5\n\n* pulse generator 0.05ms 400ms 100ms\n* plot "V(E13-PG)" "V(E22-PG)"+4 "V(E14-PG)"+8 "V(E21-PG)"+12 "V(BASE_PULSE)"\nplot "V(E13-PG)"+25 "V(BASE_PULSE)"\n\n* flip-flip and NOR output 0.05ms 400ms 100ms\n*plot "V(INT-7)"+0 "V(E13-PG)"+2 "V(E22-PG)"+6 "V(E14-PG)"+10 "V(E21-PG)"+14\n\n* toggle generation 0.05ms 400ms 100ms\n*plot "V(AUX11-TGL)"+0 "V(AUX12-TGL)"+13 "V(INT-7)"+26\n\n* edge generation 0.05ms 400ms 100ms\n*plot "V(EDGES)"+0 "V(AUX11-TGL)"+6 "V(AUX12-TGL)"+20\n\n* edge generation close up 0.05ms 92ms 89ms\n*plot "V(EDGES)"+0 "V(AUX11-TGL)"+6 "V(AUX12-TGL)"+20\n\n* base pulse generation 0.05ms 92ms 89ms\n*write "C:\Users\andy\OneDrive\Documents\MPS Tune-o-Matic\trunk\Simulation\Pressure Loop\PressureLoop.out" "V(BASE_PULSE)" "V(INT-7)"\n*plot "V(EDGES)"+0 "V(E15-MPS)"+0 "V(E10-MPS)"+0 "V(BASE_PULSE)"+12 "V(E8-MPS)"+35\n*plot "V(EDGES)"+0 "V(E15-MPS)"+0 "V(E10-MPS)"+0 "V(BASE_PULSE)"+0 "V(E8-MPS)"+0\n\nmeas tran high trig v(E13-PG) val=1.5 rise=1 targ v(E13-PG) val=1.5 fall=1\nmeas tran low trig v(E13-PG) val=1.5 fall=1 targ v(E13-PG) val=1.5 rise=2\nmeas tran pulsewidth trig v(BASE_PULSE) val=5 fall=1 targ v(BASE_PULSE) val=5 rise=1\n\nlet period = low+high\nlet dutycycle = low/period\nlet circle = 360\nlet dwellsci = circle * dutycycle\necho dwell = $&dwellsci\n\nlet pulsewidthms = pulsewidth * 1000\necho pulsewidth2 = $&pulsewidthms\n\n.endc\n
+Text Notes 5850 5700 0    50   ~ 0
+E13-PG: pulse(0 3 135ms 2n 2n 120ms 180ms)\npwl (0 0 135ms 0 135.1ms 3 255ms 3 255.1ms 0 315ms 0) r=0\n
+$Comp
+L Simulation_SPICE:VPWL V6
+U 1 1 621EFB30
+P 5050 3550
+F 0 "V6" H 5180 3641 50  0000 L CNN
+F 1 "VPWL" H 5180 3550 50  0000 L CNN
+F 2 "" H 5050 3550 50  0001 C CNN
+F 3 "~" H 5050 3550 50  0001 C CNN
+F 4 "Y" H 5050 3550 50  0001 L CNN "Spice_Netlist_Enabled"
+F 5 "V" H 5050 3550 50  0001 L CNN "Spice_Primitive"
+F 6 "pwl (0 0 135ms 0 135.1ms 3 255ms 3 255.1ms 0 256ms 0 256.1ms 3 257ms 3 257.1ms 0 315ms 0) r=0" H 5180 3459 50  0000 L CNN "Spice_Model"
+	1    5050 3550
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
