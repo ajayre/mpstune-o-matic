@@ -5,7 +5,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 3 3
 Title "MPS Tune-o-Matic"
-Date "2022-10-30"
+Date "2022-10-31"
 Rev "V1.0"
 Comp "(C) andy@britishideas.com 2022"
 Comment1 "For Bosch D-Jetronic MPS Type 3"
