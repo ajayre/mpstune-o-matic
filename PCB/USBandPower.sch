@@ -5,7 +5,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 3
 Title "MPS Tune-o-Matic"
-Date "2022-10-30"
+Date "2022-10-31"
 Rev "V1.0"
 Comp "(C) andy@britishideas.com 2022"
 Comment1 "For Bosch D-Jetronic MPS Type 3"
@@ -576,19 +576,6 @@ F 3 "" H 5350 5500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 5350 5650
-$Comp
-L power:+3V3 #PWR?
-U 1 1 61B0845B
-P 7450 2050
-AR Path="/61B0845B" Ref="#PWR?"  Part="1" 
-AR Path="/60479334/61B0845B" Ref="#PWR020"  Part="1" 
-F 0 "#PWR020" H 7450 1900 50  0001 C CNN
-F 1 "+3V3" H 7465 2223 50  0000 C CNN
-F 2 "" H 7450 2050 50  0001 C CNN
-F 3 "" H 7450 2050 50  0001 C CNN
-	1    7450 2050
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	7450 2050 7450 2200
 Wire Wire Line
@@ -659,4 +646,17 @@ Wire Wire Line
 Connection ~ 3850 5100
 Wire Wire Line
 	3850 5100 3850 5650
+$Comp
+L power:+5V #PWR?
+U 1 1 63607510
+P 7450 2050
+AR Path="/63607510" Ref="#PWR?"  Part="1" 
+AR Path="/60479334/63607510" Ref="#PWR020"  Part="1" 
+F 0 "#PWR020" H 7450 1900 50  0001 C CNN
+F 1 "+5V" H 7465 2223 50  0000 C CNN
+F 2 "" H 7450 2050 50  0001 C CNN
+F 3 "" H 7450 2050 50  0001 C CNN
+	1    7450 2050
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
