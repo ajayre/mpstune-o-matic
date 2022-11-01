@@ -1,0 +1,19 @@
+1. Prompt user to change vacuum 0, 1, 2, ..., 15. When tuning done show chart comparing their MPS to the benchmark MPS pulse width vs vacuum.
+
+2. O2 tuned MPSs need to also state fuel pressure.
+
+3. Multiple benchmark O2 tuned MPSs with different fuel pressures so user can choose which one matches their current fuel pressure
+
+4. Show current pressure and pulse width and corrected pulse width for benchmark pressure (sea level?)
+
+5. Each MPS in database has a one-line description
+
+6. Allow user to store their MPS in the database once tuned. Also need a way of deleting and sharing? Export/import MPS?
+
+7. Before tuning capture the current MPS setting so it can be returned to later if user is not happy. "Create MPS profile"
+
+8. Is only one vacuum setting needed for tuning?
+
+9. MPS profile has checkbox "unaltered" so we can automatically generate an average of all unaltered MPSs in the database.
+
+10. Document T-o-M calibration procedures.
