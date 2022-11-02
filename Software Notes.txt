@@ -17,3 +17,5 @@
 9. MPS profile has checkbox "unaltered" so we can automatically generate an average of all unaltered MPSs in the database.
 
 10. Document T-o-M calibration procedures.
+
+11. Generate stats/report such as % change in pulse width from 0 inHg to 15 inHg
