@@ -10,13 +10,14 @@
 // sysex message identifiers
 typedef enum _messageids_t
 {
-  RequestProductUID = 0xF0,
-  CurrentProductUID = 0xF1,
+  RequestProduct = 0xF0,
+  CurrentProduct = 0xF1,
   
   RequestPulseWidth = 0x02,
   CurrentPulseWidth = 0x03,
   RequestPressure   = 0x04,
-  CurrentPressure   = 0x05
+  CurrentPressure   = 0x05,
+  Ping              = 0x06
 } messageids_t;
 
 typedef struct _status_t
@@ -30,6 +31,8 @@ typedef struct _status_t
 } status_t __attribute__ ((aligned (1)));
 
 static byte OurProductUID;
+static byte OurFirmwareMajorVersion;
+static byte OurFirmwareMinorVersion;
 
 // sends the latest pulse width measurement
 static void SendPulseWidth
@@ -48,17 +51,19 @@ static void SendPulseWidth
   Firmata.sendSysex(CurrentPulseWidth, 2, Buffer);
 }
 
-// sends the product uid
-static void SendProductUID
+// sends the product details
+static void SendProduct
   (
   void
   )
 {
-  byte Buffer[1];
+  byte Buffer[3];
 
-  Buffer[0] = CurrentProductUID;
+  Buffer[0] = OurProductUID;
+  Buffer[1] = OurFirmwareMajorVersion;
+  Buffer[2] = OurFirmwareMinorVersion;
 
-  Firmata.sendSysex(CurrentProductUID, 1, Buffer);
+  Firmata.sendSysex(CurrentProduct, 3, Buffer);
 }
 
 // sends the latest atmospheric pressure measurement
@@ -84,8 +89,8 @@ static void sysexCallback(byte command, byte argc, byte *argv)
 {
   switch (command)
   {
-    case RequestProductUID:
-      SendProductUID();
+    case RequestProduct:
+      SendProduct();
       break;
 
     case RequestPulseWidth:
@@ -128,14 +133,16 @@ int Serial_printf
 // initializes the module
 void Serial_Init
   (
-  int FirmwareMajorVersion,
-  int FirmwareMinorVersion,
+  byte FirmwareMajorVersion,
+  byte FirmwareMinorVersion,
   byte ProductUID
   )
 {
   OurProductUID = ProductUID;
+  OurFirmwareMajorVersion = FirmwareMajorVersion;
+  OurFirmwareMinorVersion = FirmwareMinorVersion;
 
-  Firmata.setFirmwareVersion(FirmwareMajorVersion, FirmwareMinorVersion);
+  Firmata.setFirmwareVersion(2, 0);
   //Firmata.attach(STRING_DATA, stringCallback);
   Firmata.attach(START_SYSEX, sysexCallback);
   Firmata.begin(57600);

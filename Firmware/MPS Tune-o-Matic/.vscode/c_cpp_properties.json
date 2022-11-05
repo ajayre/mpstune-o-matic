@@ -8,11 +8,11 @@
         {
             "name": "PlatformIO",
             "includePath": [
-                "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/include",
-                "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/src",
-                "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/.pio/libdeps/nanoatmega328new/Firmata",
-                "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/.pio/libdeps/nanoatmega328new/Firmata/utility",
-                "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/.pio/libdeps/nanoatmega328new/SoftwareSerial",
+                "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/MPS Tune-o-Matic/include",
+                "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/MPS Tune-o-Matic/src",
+                "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/MPS Tune-o-Matic/.pio/libdeps/nanoatmega328new/Firmata",
+                "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/MPS Tune-o-Matic/.pio/libdeps/nanoatmega328new/Firmata/utility",
+                "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/MPS Tune-o-Matic/.pio/libdeps/nanoatmega328new/SoftwareSerial",
                 "C:/Users/andy/.platformio/packages/framework-arduino-avr/cores/arduino",
                 "C:/Users/andy/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs",
                 "C:/Users/andy/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
@@ -25,11 +25,11 @@
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
-                    "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/include",
-                    "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/src",
-                    "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/.pio/libdeps/nanoatmega328new/Firmata",
-                    "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/.pio/libdeps/nanoatmega328new/Firmata/utility",
-                    "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/.pio/libdeps/nanoatmega328new/SoftwareSerial",
+                    "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/MPS Tune-o-Matic/include",
+                    "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/MPS Tune-o-Matic/src",
+                    "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/MPS Tune-o-Matic/.pio/libdeps/nanoatmega328new/Firmata",
+                    "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/MPS Tune-o-Matic/.pio/libdeps/nanoatmega328new/Firmata/utility",
+                    "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/MPS Tune-o-Matic/.pio/libdeps/nanoatmega328new/SoftwareSerial",
                     "C:/Users/andy/.platformio/packages/framework-arduino-avr/cores/arduino",
                     "C:/Users/andy/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs",
                     "C:/Users/andy/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
