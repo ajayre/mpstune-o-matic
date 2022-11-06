@@ -1,5 +1,5 @@
-// Mercedes V8 DJet Engine Simulator
-// (C) andy@britishideas.com 2021-2022
+// D-Jetronic MPS Tune-o-Matic
+// (C) andy@britishideas.com 2022
 
 #ifndef _SERIALH_
 #define _SERIALH_
@@ -24,6 +24,18 @@ extern int Serial_printf
   (
   char const *format,
   ...
+  );
+
+// sends a pulse width measurement
+extern void Serial_SendPulseWidth
+  (
+  uint16_t PulseWidth
+  );
+
+// sends an atmospheric pressure measurement
+extern void Serial_SendPressure
+  (
+  double Pressure     // pressure in Pa
   );
 
 #endif // _SERIALH_

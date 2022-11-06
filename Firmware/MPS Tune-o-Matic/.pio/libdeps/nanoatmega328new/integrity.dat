@@ -1,2 +1,3 @@
-featherfly/SoftwareSerial@^1.0
+adafruit/Adafruit BusIO@^1.14.1
 firmata/Firmata@^2.5.8
+featherfly/SoftwareSerial@^1.0

@@ -10,6 +10,9 @@
             "includePath": [
                 "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/MPS Tune-o-Matic/include",
                 "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/MPS Tune-o-Matic/src",
+                "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/MPS Tune-o-Matic/.pio/libdeps/nanoatmega328new/Adafruit BusIO",
+                "C:/Users/andy/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                "C:/Users/andy/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                 "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/MPS Tune-o-Matic/.pio/libdeps/nanoatmega328new/Firmata",
                 "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/MPS Tune-o-Matic/.pio/libdeps/nanoatmega328new/Firmata/utility",
                 "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/MPS Tune-o-Matic/.pio/libdeps/nanoatmega328new/SoftwareSerial",
@@ -17,9 +20,7 @@
                 "C:/Users/andy/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs",
                 "C:/Users/andy/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                 "C:/Users/andy/.platformio/packages/framework-arduino-avr/libraries/HID/src",
-                "C:/Users/andy/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
                 "C:/Users/andy/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
-                "C:/Users/andy/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                 ""
             ],
             "browse": {
@@ -27,6 +28,9 @@
                 "path": [
                     "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/MPS Tune-o-Matic/include",
                     "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/MPS Tune-o-Matic/src",
+                    "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/MPS Tune-o-Matic/.pio/libdeps/nanoatmega328new/Adafruit BusIO",
+                    "C:/Users/andy/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                    "C:/Users/andy/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                     "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/MPS Tune-o-Matic/.pio/libdeps/nanoatmega328new/Firmata",
                     "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/MPS Tune-o-Matic/.pio/libdeps/nanoatmega328new/Firmata/utility",
                     "c:/Users/andy/OneDrive/Documents/MPS Tune-o-Matic/trunk/Firmware/MPS Tune-o-Matic/.pio/libdeps/nanoatmega328new/SoftwareSerial",
@@ -34,9 +38,7 @@
                     "C:/Users/andy/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs",
                     "C:/Users/andy/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
                     "C:/Users/andy/.platformio/packages/framework-arduino-avr/libraries/HID/src",
-                    "C:/Users/andy/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
                     "C:/Users/andy/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
-                    "C:/Users/andy/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                     ""
                 ]
             },

@@ -1,9 +1,10 @@
-// Mercedes V8 DJet Engine Simulator
-// (C) andy@britishideas.com 2021-2022
+// D-Jetronic MPS Tune-o-Matic
+// (C) andy@britishideas.com 2022
 
 #include <Arduino.h>
 #include <Firmata.h>
 #include "Serial.h"
+#include "Tuner.h"
 
 #define MAX_DEBUG_LINE_LENGTH 128
 
@@ -17,7 +18,8 @@ typedef enum _messageids_t
   CurrentPulseWidth = 0x03,
   RequestPressure   = 0x04,
   CurrentPressure   = 0x05,
-  Ping              = 0x06
+  StartContinuousMeasurement = 0x06,
+  StopContinuousMeasurement = 0x07
 } messageids_t;
 
 typedef struct _status_t
@@ -34,23 +36,6 @@ static byte OurProductUID;
 static byte OurFirmwareMajorVersion;
 static byte OurFirmwareMinorVersion;
 
-// sends the latest pulse width measurement
-static void SendPulseWidth
-  (
-  void
-  )
-{
-  byte Buffer[2];
-  uint16_t Width;
-
-  Width = 0;
-
-  Buffer[0] = Width & 0xFF;
-  Buffer[1] = (Width >> 8) & 0xFF;
-
-  Firmata.sendSysex(CurrentPulseWidth, 2, Buffer);
-}
-
 // sends the product details
 static void SendProduct
   (
@@ -66,27 +51,13 @@ static void SendProduct
   Firmata.sendSysex(CurrentProduct, 3, Buffer);
 }
 
-// sends the latest atmospheric pressure measurement
-static void SendPressure
-  (
-  void
-  )
-{
-  byte Buffer[2];
-  uint16_t Pressure;
-
-  Pressure = 0;
-
-  Buffer[0] = Pressure & 0xFF;
-  Buffer[1] = (Pressure >> 8) & 0xFF;
-
-  Firmata.sendSysex(CurrentPressure, 2, Buffer);
-}
-
 // called when a sysex message is received
 // processes the message
 static void sysexCallback(byte command, byte argc, byte *argv)
 {
+  double Pressure;
+  uint16_t PulseWidth;
+
   switch (command)
   {
     case RequestProduct:
@@ -94,11 +65,21 @@ static void sysexCallback(byte command, byte argc, byte *argv)
       break;
 
     case RequestPulseWidth:
-      SendPulseWidth();
+      PulseWidth = Tuner_GetPulseWidth();
+      Serial_SendPulseWidth(PulseWidth);
       break;
 
     case RequestPressure:
-      SendPressure();
+      Pressure = Tuner_GetPressure();
+      Serial_SendPressure(Pressure);
+      break;
+
+    case StartContinuousMeasurement:
+      Tuner_SetContinuousMeasurement(true);
+      break;
+
+    case StopContinuousMeasurement:
+      Tuner_SetContinuousMeasurement(false);
       break;
   }
 
@@ -158,4 +139,32 @@ void Serial_Process
   {
     Firmata.processInput();
   }
+}
+
+// sends a pulse width measurement
+void Serial_SendPulseWidth
+  (
+  uint16_t PulseWidth
+  )
+{
+  byte Buffer[2];
+
+  Buffer[0] = PulseWidth & 0xFF;
+  Buffer[1] = (PulseWidth >> 8) & 0xFF;
+
+  Firmata.sendSysex(CurrentPulseWidth, 2, Buffer);
+}
+
+// sends an atmospheric pressure measurement
+void Serial_SendPressure
+  (
+  double Pressure     // pressure in Pa
+  )
+{
+  byte Buffer[4];
+
+  // for atmega double is the same as float
+  memcpy(Buffer, (byte *)&Pressure, 4);
+
+  Firmata.sendSysex(CurrentPressure, 4, Buffer);
 }
