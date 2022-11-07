@@ -24,7 +24,7 @@ extern double Tuner_GetPressure
   void  
   );
 
-// gets the current pulse width
+// gets the current pulse width in microseconds
 extern uint16_t Tuner_GetPulseWidth
   (
   void  

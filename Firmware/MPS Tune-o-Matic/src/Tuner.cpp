@@ -5,16 +5,22 @@
 #include "Tuner.h"
 #include "Serial.h"
 #include "Adafruit_BMP3XX-master/Adafruit_BMP3XX.h"
+#include "TimerOne-master/TimerOne.h"
 
 // mcu pins
-#define PIN_STATUS_LED A3  // PC3
-#define PIN_BMP_CS     8   // PB0
+#define PIN_STATUS_LED   A3  // PC3
+#define PIN_BMP_CS       8   // PB0
+#define PIN_MPS_PULSE    2   // PD2
+#define PIN_MPS_STIMULUS 9   // PB1
 
 // time between turning the status LED on or off in milliseconds
 #define LED_FLASH_PERIOD 1000
 
 // time between measurement periods in milliseconds
 #define MEASUREMENT_PERIOD 100
+
+// time between edges on mps stimulator signal, in microseconds
+#define MPS_STIMULATOR_PERIOD_US 20000
 
 // IO macros
 #define STATUS_LED_ON    digitalWrite(PIN_STATUS_LED, LOW)
@@ -28,6 +34,9 @@ static unsigned long LEDTimestamp;
 static bool ContinuousMeasurementEnabled;
 static unsigned long MeasurementTimestamp;
 static Adafruit_BMP3XX Bmp;
+static unsigned long MPSPulseBeginTime;
+static unsigned long MPSPulseDuration;
+static bool MPSPulseMeasured;
 
 // Gets the current time in milliseconds since last power on
 static unsigned long GetTime
@@ -63,6 +72,65 @@ static uint8_t IsTimeExpired
   }
 }
 
+// called when edge detected on mps pulse pin
+static void MPSPulseInterrupt
+  (
+  void  
+  )
+{
+  if (digitalRead(PIN_MPS_PULSE) == LOW)
+  {
+    // start measuring
+    MPSPulseBeginTime = micros();
+  }
+  else
+  {
+    // stop measuring
+    MPSPulseDuration = micros() - MPSPulseBeginTime;
+    MPSPulseMeasured = true;
+  }
+}
+
+// stimulates the MPS by providing a pulse, called from timer 1 interrupt
+static void MPSStimulator
+  (
+  void
+  )
+{
+  if (digitalRead(PIN_MPS_STIMULUS) == HIGH)
+  {
+    digitalWrite(PIN_MPS_STIMULUS, LOW);
+  }
+  else
+  {
+    digitalWrite(PIN_MPS_STIMULUS, HIGH);
+  }
+
+  // restart
+  Timer1.setPeriod(MPS_STIMULATOR_PERIOD_US);
+  Timer1.attachInterrupt(MPSStimulator);
+}
+
+// starts the mps stimulation
+static void StartMPSStimulation
+  (
+  void
+  )
+{
+  // start MPS stimulation
+  Timer1.setPeriod(MPS_STIMULATOR_PERIOD_US);
+  Timer1.start();
+}
+
+// stops the mps stimulation
+static void StopMPSStimulation
+  (
+  void  
+  )
+{
+  Timer1.stop();
+}
+
 /////////////////////////////////////////////////////////////////////
 // PUBLIC FUNCTIONS
 
@@ -72,9 +140,24 @@ void Tuner_Init
   void
   )
 {
-  // set up outputs
-  pinMode(PIN_STATUS_LED, OUTPUT);
+  // set up pins
+  pinMode(PIN_STATUS_LED,   OUTPUT);
+  pinMode(PIN_MPS_PULSE,    INPUT);
+  pinMode(PIN_MPS_STIMULUS, OUTPUT);
+
   STATUS_LED_OFF;
+
+  // set up pulse measurement
+  MPSPulseMeasured = false;
+  attachInterrupt(digitalPinToInterrupt(PIN_MPS_PULSE), MPSPulseInterrupt, CHANGE);
+
+  // set up stimulator
+  Timer1.initialize(0);
+  Timer1.attachInterrupt(MPSStimulator);
+  Timer1.stop();
+
+  // fixme - remove
+  StartMPSStimulation();
 
   randomSeed(analogRead(6));
 
@@ -153,7 +236,7 @@ double Tuner_GetPressure
   return Pressure;
 }
 
-// gets the current pulse width
+// gets the current pulse width in microseconds
 uint16_t Tuner_GetPulseWidth
   (
   void  
@@ -164,7 +247,23 @@ uint16_t Tuner_GetPulseWidth
 #if SIMULATE == 1
   Width = random(11000, 12000);
 #else
-  Width = 0;
+  // wait for next pulse
+  if (!MPSPulseMeasured)
+  {
+    delay(MPS_STIMULATOR_PERIOD_US * 2);
+  }
+
+  if (MPSPulseMeasured)
+  {
+    Width = MPSPulseDuration;
+    MPSPulseMeasured = false;
+  }
+  // no pulse detected
+  else
+  {
+    Width = 0;
+  }
+
 #endif // SIMULATE == 1
 
   return Width;
