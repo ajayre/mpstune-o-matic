@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 3
 Title "MPS Tune-o-Matic"
-Date "2022-10-31"
-Rev "V1.0"
+Date "2022-11-10"
+Rev "V1.1"
 Comp "(C) andy@britishideas.com 2022"
 Comment1 "For Bosch D-Jetronic MPS Type 3"
 Comment2 ""
@@ -658,6 +658,65 @@ F 1 "+5V" H 7465 2223 50  0000 C CNN
 F 2 "" H 7450 2050 50  0001 C CNN
 F 3 "" H 7450 2050 50  0001 C CNN
 	1    7450 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 636F0574
+P 6750 2350
+AR Path="/636F0574" Ref="D?"  Part="1" 
+AR Path="/60479334/636F0574" Ref="D9"  Part="1" 
+F 0 "D9" V 6789 2232 50  0000 R CNN
+F 1 "APT1608EC" V 6698 2232 50  0000 R CNN
+F 2 "LED_SMD:LED_0603_1608Metric" H 6750 2350 50  0001 C CNN
+F 3 "~" H 6750 2350 50  0001 C CNN
+F 4 "APT1608EC" V 6750 2350 50  0001 C CNN "manf#"
+	1    6750 2350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 636F0836
+P 6750 2900
+AR Path="/636F0836" Ref="R?"  Part="1" 
+AR Path="/60479334/636F0836" Ref="R31"  Part="1" 
+F 0 "R31" H 6600 2950 50  0000 C CNN
+F 1 "510" H 6600 2850 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 6680 2900 50  0001 C CNN
+F 3 "~" H 6750 2900 50  0001 C CNN
+	1    6750 2900
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 636F0840
+P 6750 3150
+AR Path="/636F0840" Ref="#PWR?"  Part="1" 
+AR Path="/60479334/636F0840" Ref="#PWR039"  Part="1" 
+F 0 "#PWR039" H 6750 2900 50  0001 C CNN
+F 1 "GND" H 6755 2977 50  0000 C CNN
+F 2 "" H 6750 3150 50  0001 C CNN
+F 3 "" H 6750 3150 50  0001 C CNN
+	1    6750 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6750 2500 6750 2750
+Wire Wire Line
+	6750 3050 6750 3150
+Wire Wire Line
+	6750 2050 6750 2200
+$Comp
+L power:+12V #PWR?
+U 1 1 636F3AD7
+P 6750 2050
+AR Path="/636F3AD7" Ref="#PWR?"  Part="1" 
+AR Path="/60479334/636F3AD7" Ref="#PWR038"  Part="1" 
+F 0 "#PWR038" H 6750 1900 50  0001 C CNN
+F 1 "+12V" H 6765 2223 50  0000 C CNN
+F 2 "" H 6750 2050 50  0001 C CNN
+F 3 "" H 6750 2050 50  0001 C CNN
+	1    6750 2050
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

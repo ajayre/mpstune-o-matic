@@ -448,24 +448,6 @@ X Shield 6 -100 -400 100 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Simulation_SPICE_DIODE
-#
-DEF Simulation_SPICE_DIODE D 0 40 N N 1 F N
-F0 "D" 0 100 50 H V C CNN
-F1 "Simulation_SPICE_DIODE" 0 -100 50 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-F4 "Y" 0 0 50 H I L CNN "Spice_Netlist_Enabled"
-F5 "D" 0 0 50 H I L CNN "Spice_Primitive"
-DRAW
-P 2 0 1 0 50 0 -50 0 N
-P 2 0 1 10 50 50 50 -50 N
-P 4 0 1 10 -50 -50 -50 50 50 0 -50 -50 N
-X A 1 -150 0 100 R 50 50 1 1 P
-X K 2 150 0 100 L 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
 # Transistor_BJT_2SD1047
 #
 DEF Transistor_BJT_2SD1047 Q 0 0 Y N 1 F N

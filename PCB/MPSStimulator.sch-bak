@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 3 3
 Title "MPS Tune-o-Matic"
-Date "2022-10-31"
-Rev "V1.0"
+Date "2022-11-10"
+Rev "V1.1"
 Comp "(C) andy@britishideas.com 2022"
 Comment1 "For Bosch D-Jetronic MPS Type 3"
 Comment2 ""
@@ -14,7 +14,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Simulation_SPICE:DIODE D4
+L Device:D D4
 U 1 1 62457901
 P 3900 6250
 F 0 "D4" H 3850 6150 50  0000 L CNN
@@ -25,13 +25,13 @@ F 4 "Y" H 3900 6250 50  0001 L CNN "Spice_Netlist_Enabled"
 F 5 "D" H 3900 6250 50  0001 L CNN "Spice_Primitive"
 F 6 "RB520SM-30T2R" H 3900 6250 50  0001 C CNN "manf#"
 	1    3900 6250
-	-1   0    0    -1  
+	1    0    0    1   
 $EndComp
 $Comp
-L Simulation_SPICE:DIODE D5
+L Device:D D5
 U 1 1 62458057
 P 4450 6250
-F 0 "D5" H 4400 6150 50  0000 L CNN
+F 0 "D5" H 4400 6350 50  0000 L CNN
 F 1 "RB520SM-30T2R" V 4495 6330 50  0001 L CNN
 F 2 "Diode_SMD:D_SOD-523" H 4450 6250 50  0001 C CNN
 F 3 "~" H 4450 6250 50  0001 C CNN
@@ -39,7 +39,7 @@ F 4 "Y" H 4450 6250 50  0001 L CNN "Spice_Netlist_Enabled"
 F 5 "D" H 4450 6250 50  0001 L CNN "Spice_Primitive"
 F 6 "RB520SM-30T2R" H 4450 6250 50  0001 C CNN "manf#"
 	1    4450 6250
-	1    0    0    1   
+	-1   0    0    -1  
 $EndComp
 Wire Wire Line
 	4050 6250 4200 6250
@@ -231,7 +231,7 @@ Wire Wire Line
 Wire Wire Line
 	3250 5100 3050 5100
 $Comp
-L Simulation_SPICE:DIODE D3
+L Device:D D3
 U 1 1 6278C325
 P 2450 5100
 F 0 "D3" H 2400 5000 50  0000 L CNN
@@ -242,7 +242,7 @@ F 4 "Y" H 2450 5100 50  0001 L CNN "Spice_Netlist_Enabled"
 F 5 "D" H 2450 5100 50  0001 L CNN "Spice_Primitive"
 F 6 "RB520SM-30T2R" H 2450 5100 50  0001 C CNN "manf#"
 	1    2450 5100
-	1    0    0    1   
+	-1   0    0    -1  
 $EndComp
 Wire Wire Line
 	2600 5100 2750 5100
@@ -567,7 +567,7 @@ F 5 "PZT2222A,115" H 1700 2650 50  0001 C CNN "manf#"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	850  2650 1250 2650
+	1150 2650 1250 2650
 Wire Wire Line
 	1800 2450 1800 2350
 Wire Wire Line
@@ -674,7 +674,7 @@ Wire Wire Line
 	5100 2200 5100 3050
 Connection ~ 5100 2200
 $Comp
-L Simulation_SPICE:DIODE D6
+L Device:D D6
 U 1 1 620A24B9
 P 5750 2200
 F 0 "D6" H 5700 2100 50  0000 L CNN
@@ -685,7 +685,7 @@ F 4 "Y" H 5750 2200 50  0001 L CNN "Spice_Netlist_Enabled"
 F 5 "D" H 5750 2200 50  0001 L CNN "Spice_Primitive"
 F 6 "RB520SM-30T2R" H 5750 2200 50  0001 C CNN "manf#"
 	1    5750 2200
-	-1   0    0    -1  
+	1    0    0    1   
 $EndComp
 Wire Wire Line
 	5600 2200 5100 2200
@@ -721,7 +721,7 @@ Connection ~ 5450 2850
 Wire Wire Line
 	5450 2850 5450 3050
 $Comp
-L Simulation_SPICE:DIODE D7
+L Device:D D7
 U 1 1 620FD22E
 P 5750 2850
 F 0 "D7" H 5700 2750 50  0000 L CNN
@@ -732,7 +732,7 @@ F 4 "Y" H 5750 2850 50  0001 L CNN "Spice_Netlist_Enabled"
 F 5 "D" H 5750 2850 50  0001 L CNN "Spice_Primitive"
 F 6 "RB520SM-30T2R" H 5750 2850 50  0001 C CNN "manf#"
 	1    5750 2850
-	-1   0    0    -1  
+	1    0    0    1   
 $EndComp
 Wire Wire Line
 	5600 2850 5450 2850
@@ -795,7 +795,7 @@ F 4 "MK 6,8μF ±5% 100V" H 4650 2200 50  0001 C CNN "Notes"
 	1    4650 2200
 	0    -1   1    0   
 $EndComp
-Text HLabel 850  2650 0    50   Input ~ 0
+Text HLabel 700  2650 0    50   Input ~ 0
 IN
 Wire Wire Line
 	3250 2000 3250 2600
@@ -1069,4 +1069,18 @@ Wire Wire Line
 Connection ~ 8250 1600
 Wire Wire Line
 	8250 1600 8250 1550
+$Comp
+L Device:R R30
+U 1 1 636DCAD5
+P 1000 2650
+F 0 "R30" V 900 2600 50  0000 L CNN
+F 1 "10k" V 1100 2600 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 1040 2640 50  0001 C CNN
+F 3 "~" H 1000 2650 50  0001 C CNN
+F 4 "" H 1000 2650 50  0001 C CNN "Notes"
+	1    1000 2650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	700  2650 850  2650
 $EndSCHEMATC
