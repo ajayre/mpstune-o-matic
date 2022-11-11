@@ -14,7 +14,8 @@
 #define PIN_MPS_STIMULUS 9   // PB1
 
 // time between turning the status LED on or off in milliseconds
-#define LED_FLASH_PERIOD 1000
+#define LED_FLASH_PERIOD      1000
+#define LED_FAST_FLASH_PERIOD 250
 
 // time between measurement periods in milliseconds
 #define MEASUREMENT_PERIOD 250
@@ -180,7 +181,7 @@ void Tuner_Init
 
   // perform initial reads of the pressure because the first
   // few readings are always incorrect
-  for (p = 0; p < 10; p++)
+  for (p = 0; p < 5; p++)
   {
     Tuner_GetPressure();
     delay(10);
@@ -219,7 +220,14 @@ void Tuner_Process
       STATUS_LED_ON;
     }
 
-    LEDTimestamp = GetTime() + LED_FLASH_PERIOD;
+    if (ContinuousMeasurementEnabled)
+    {
+      LEDTimestamp = GetTime() + LED_FAST_FLASH_PERIOD;
+    }
+    else
+    {
+      LEDTimestamp = GetTime() + LED_FLASH_PERIOD;
+    }
   }
 }
 
