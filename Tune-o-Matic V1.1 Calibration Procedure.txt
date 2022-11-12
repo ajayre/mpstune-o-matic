@@ -1,0 +1,14 @@
+TUNE-O-MATIC V1.1 CALIBRATION PROCEDURE
+=======================================
+
+Version 1, Nov 2022
+
+1. Unplug Tune-o-Matic from USB, 12V power and disconnect any MPS that is attached
+2. Unscrew four bolts that hold the top of the case on and remove top of case
+3. Place probes of LCR meter set to resistance on square test pads either side of RV1
+4. Adjust screw on top of RV1 until resistance reads 0.500 Ohms
+5. Place probes of LCR meter set to resistance on square test pads either side of RV2
+6. Adjust screw on top of RV2 until resistance reads 2.500 Ohms
+7. Replace top of case and four bolts.
+
+Recheck every six months and after every shipping.
