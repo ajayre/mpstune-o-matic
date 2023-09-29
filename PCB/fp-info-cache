@@ -1,4 +1,4 @@
-19527868389725059
+19539574297548342
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -406,6 +406,13 @@ Keystone_SturdiMount_TabConnector_1x4
 8
 4
 Britishideas
+LCD_16x2
+Through hole straight pin header, 1x16, 2.54mm pitch, single row
+Through hole pin header THT 1x16 2.54mm single row
+0
+16
+16
+Britishideas
 LGA-2x2-10-pin
 Bosch 10pin LGA
 
@@ -420,12 +427,26 @@ Molex_5050662422
 28
 24
 Britishideas
+Panasonic GY Capacitor
+
+
+0
+2
+2
+Britishideas
 PhoenixContact_COMBICON_MKDSN_2
 
 
 0
 2
 2
+Britishideas
+PhoenixContact_COMBICON_PT_3
+
+
+0
+3
+3
 Britishideas
 PhoenixContact_COMBICON_PT_4
 
@@ -468,6 +489,20 @@ Potentometer_Bourns_PV36W
 0
 3
 3
+Britishideas
+Pressure_Connector
+
+
+0
+0
+0
+Britishideas
+Pressure_Connector_With_Mounting_Holes
+
+
+0
+0
+0
 Britishideas
 R107Silhouette
 
@@ -51002,6 +51037,13 @@ DB9 CAN connector, male
 11
 9
 EmSA
+DS-ESS-COIA-M0-SOSMT
+COIA-M0 Module Female Socket
+
+0
+24
+24
+EmSA
 EmSALogo_10mm
 
 
@@ -51204,6 +51246,13 @@ QR_esacademycom_20mm
 0
 0
 0
+EmSA
+RAMPS_Stepper_Driver
+RAMPS style stepper motor driver module
+
+0
+16
+16
 EmSA
 SOD-123
 
